@@ -18,21 +18,21 @@ public class WindowBreakdown extends BasicSimEvent<Bank, Object> {
     protected void stateChange() throws SimControlException {
         Bank bank = getSimObj();
         bank.appendTextToLogs(String.format("%.5f",simTime()) + " :###: Awaria okienka nr " + idOkienka);
-        if (bank.getOpuszczeniaOkienka()[idOkienka] != null) {
-            bank.getOpuszczeniaOkienka()[idOkienka].onInterruption();
-            if(!bank.getOkienka()[idOkienka].isWolne()) {
-                Customer customer = bank.getOpuszczeniaOkienka()[idOkienka].getCustomer();
-                bank.getOpuszczeniaOkienka()[idOkienka].terminate();
-                customer.setPriorytet(0);
-                customer.setInOkienko(false);
-                bank.getCustomerQueueTechniczna().addClient(customer);
+        if (bank.getLeavingTheWindowTab()[idOkienka] != null) {
+            bank.getLeavingTheWindowTab()[idOkienka].onInterruption();
+            if(!bank.getWindowsTab()[idOkienka].isAvaliable()) {
+                Customer customer = bank.getLeavingTheWindowTab()[idOkienka].getCustomer();
+                bank.getLeavingTheWindowTab()[idOkienka].terminate();
+                customer.setPriority(0);
+                customer.setInWindow(false);
+                bank.getCustomerTechnicalQueue().addClient(customer);
                 bank.appendTextToLogs(String.format("%.5f",simTime()) + " :###: klient " + customer.getId() + " przekierowany do kolejki technicznej" );
-                customer.setStartCzekania(simTime());
+                customer.setWaitingTimeStart(simTime());
             }
         }
-        bank.getOkienka()[idOkienka].setWolne(false);
-        bank.getOkienka()[idOkienka].setAwaria(true);
-        double dt = bank.getSimGenerator().exponential(bank.getEnvironment().naprawa);
+        bank.getWindowsTab()[idOkienka].setAvaliable(false);
+        bank.getWindowsTab()[idOkienka].setBroken(true);
+        double dt = bank.getSimGenerator().exponential(bank.getEnvironment().reparationTimeDelay);
         new WindowReparation(bank, idOkienka, dt);
     }
 

@@ -19,15 +19,15 @@ public class WindowReparation extends BasicSimEvent<Bank, Object> {
     protected void stateChange() throws SimControlException {
         Bank bank = getSimObj();
         bank.appendTextToLogs(String.format("%.5f",simTime()) + " :###: Okienko nr " + okienko + " naprawione");
-        bank.getOkienka()[okienko].setWolne(true);
-        bank.getOkienka()[okienko].setAwaria(false);
+        bank.getWindowsTab()[okienko].setAvaliable(true);
+        bank.getWindowsTab()[okienko].setBroken(false);
 
-        if (bank.getOkienka()[okienko].getCustomerQueue().getSize() > 0 && bank.getOkienka()[okienko].isWolne()) {
-            new ApproachToTheWindow(bank, bank.getOkienka()[okienko], 0);
+        if (bank.getWindowsTab()[okienko].getCustomerQueue().getSize() > 0 && bank.getWindowsTab()[okienko].isAvaliable()) {
+            new ApproachToTheWindow(bank, bank.getWindowsTab()[okienko], 0);
         }
 
-        if (bank.getMax_klientow() > bank.getIlosc_klientow()) {
-            double delay = bank.getSimGenerator().exponential(bank.getEnvironment().awaria);
+        if (bank.getMaxLimitOfCustomers() > bank.getCurrentNumberOfCustomers()) {
+            double delay = bank.getSimGenerator().exponential(bank.getEnvironment().breakdownTimeDelay);
             new WindowBreakdown(bank, okienko, delay);
         }
     }

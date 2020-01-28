@@ -39,7 +39,7 @@ public class Drawer extends Thread{
         Random rand = new Random();
 
         //Stworzenie tablicy kolorów dla oznaczenia priorytetow
-        for(int x = 0; x<=bank.getEnvironment().ilosc_priorytetow; x++) {
+        for(int x = 0; x<=bank.getEnvironment().numberOfPriorities; x++) {
             int r = rand.nextInt(256);
             int g = rand.nextInt(256);
             int b = rand.nextInt(256);
@@ -82,13 +82,13 @@ public class Drawer extends Thread{
 
                 //Rysowanie okienek
                 int currX = 873 - okienkoWidth - okienkoWidth -okienkoWidth - 20, currY = 10;
-                for (int x = 0; x < bank.getOkienka().length;  x++) {
+                for (int x = 0; x < bank.getWindowsTab().length; x++) {
                     if(currY + okienkoHeight > 800) {
                         currX = 873 - okienkoWidth - 10;
                         currY = 10;
                     }
                     Rectangle rectangle = new Rectangle(currX, currY, okienkoWidth, okienkoHeight);
-                    if(bank.getOkienka()[x].isAwaria()) {
+                    if(bank.getWindowsTab()[x].isBroken()) {
                         //rectangle.setFill(Paint.valueOf("#9e0000"));
                         try
                         {
@@ -107,7 +107,7 @@ public class Drawer extends Thread{
                     drawingPane.getChildren().add(label);
 
                     //Ryswoanie kilienta przy okienku
-                    if(!bank.getOkienka()[x].isWolne() && !bank.getOkienka()[x].isAwaria()) {
+                    if(!bank.getWindowsTab()[x].isAvaliable() && !bank.getWindowsTab()[x].isBroken()) {
                         Circle circle = new Circle(currX - okienkoWidth*0.5 + 10, currY + klientRadius - 3, klientRadius);
                         circle.setFill(Paint.valueOf("#03fc90"));
                         circle.setStroke(Paint.valueOf("#000000"));
@@ -121,7 +121,7 @@ public class Drawer extends Thread{
 
                 currX = 30;
                 currY = 30;
-                for (int x = 0; x < bank.getCustomerQueueTechniczna().getSize(); x++) {
+                for (int x = 0; x < bank.getCustomerTechnicalQueue().getSize(); x++) {
                     if (currX + klientRadius * 2 > 500) {
                         currX = 30;
                         currY += 50;
@@ -176,7 +176,7 @@ public class Drawer extends Thread{
         drawingPane.getChildren().add(circle);
 
         if (bank.getCustomerQueue().getSize() > x) {
-            int priorytet = bank.getCustomerQueue().at(x).getPriorytet();
+            int priorytet = bank.getCustomerQueue().at(x).getPriority();
             Label label = new Label(String.valueOf(priorytet));
             if (priorytet > 9)
             {

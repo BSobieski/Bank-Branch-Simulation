@@ -1,34 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="initial commit">
-      <change afterPath="$PROJECT_DIR$/src/java/events/LeavingTheWindow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/java/events/PodejscieDoOkienka.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/java/events/ZnieciepliwienieKlienta.java" afterDir="false" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="class and package names refactor">
+      <change afterPath="$PROJECT_DIR$/src/main/java/objects/Bank.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/objects/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/objects/CustomerQueue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/objects/Environment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI.iml" beforeDir="false" afterPath="$PROJECT_DIR$/GUI.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GUI/META-INF/GUI.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GUI/app/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/app/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GUI/app/Drawer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/app/Drawer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GUI/app/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/app/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GUI/app/Simulation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/app/Simulation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GUI/app/layout.fxml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GUI/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GUI/resources/alert.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GUI/resources/log.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/app/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Drawer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/app/Drawer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/app/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Simulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/app/Simulation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/layout.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/obiekty/Bank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/objects/Bank.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/obiekty/Klient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/objects/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/obiekty/Kolejka.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/objects/CustomerQueue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/obiekty/Okienko.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/objects/Window.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/obiekty/Otoczenie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/objects/Environment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/alert.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/alert.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/resources/log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/wydarzenia/AwariaOkienka.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/events/WindowBreakdown.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/wydarzenia/NaprawaOkienka.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/events/WindowReparation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/wydarzenia/OpuszczenieOkienka.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/wydarzenia/PodejscieDoOkienka.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/wydarzenia/PrzybycieKlienta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/events/PrzybycieKlienta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/wydarzenia/ZnieciepliwienieKlienta.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GUI/obiekty/Bank.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GUI/obiekty/Klient.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GUI/obiekty/Kolejka.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GUI/obiekty/Okienko.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GUI/obiekty/Otoczenie.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GUI/wydarzenia/AwariaOkienka.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GUI/wydarzenia/NaprawaOkienka.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GUI/wydarzenia/OpuszczenieOkienka.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GUI/wydarzenia/PodejscieDoOkienka.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GUI/wydarzenia/PrzybycieKlienta.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GUI/wydarzenia/ZnieciepliwienieKlienta.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/alert.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/alert.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/layout.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/layout.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/app/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/app/Drawer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Drawer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/app/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/app/Simulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Simulation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/events/ApproachToTheWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/events/ApproachToTheWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/events/CustomerArrival.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/events/CustomerArrival.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/events/ImpatienceOfTheCustomer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/events/ImpatienceOfTheCustomer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/events/LeavingTheWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/events/LeavingTheWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/events/WindowBreakdown.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/events/WindowBreakdown.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/events/WindowReparation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/events/WindowReparation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/objects/Bank.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/objects/Customer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/objects/CustomerQueue.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/objects/Environment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/objects/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/objects/Window.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -156,11 +170,11 @@
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Semestr 5\PSY Projekt Bank\src\main\resources" />
+      <recent name="D:\Semestr 5\PSY Projekt Bank\src\main\java\app" />
+      <recent name="D:\Semestr 5\PSY Projekt Bank\src\main" />
       <recent name="D:\Semestr 5\PSY Projekt Bank\resources" />
       <recent name="D:\Semestr 5\PSY Projekt Bank" />
-      <recent name="C:\Users\Bartosz Sobieski\Desktop\PSY GUI\src\resources" />
-      <recent name="C:\Users\Bartosz Sobieski\Desktop\PSY GUI\src" />
-      <recent name="C:\Users\Bartosz Sobieski\Desktop\PSY GUI\src\java" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -288,7 +302,9 @@
       <workItem from="1579516902514" duration="1605000" />
       <workItem from="1580214144051" duration="364000" />
       <workItem from="1580214523151" duration="71000" />
-      <workItem from="1580214660905" duration="1881000" />
+      <workItem from="1580214660905" duration="4942000" />
+      <workItem from="1580235319122" duration="4811000" />
+      <workItem from="1580249660587" duration="257000" />
     </task>
     <task id="LOCAL-00001" summary="Basic UI and drawer">
       <created>1579364378682</created>
@@ -339,7 +355,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580215206508</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="class and package names refactor">
+      <created>1580216671709</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1580216671709</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -366,7 +389,8 @@
     <MESSAGE value="Final" />
     <MESSAGE value="ulepszonko" />
     <MESSAGE value="initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
+    <MESSAGE value="class and package names refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="class and package names refactor" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="70" key="#Plugins" />

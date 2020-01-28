@@ -1,0 +1,153 @@
+		---START SYMULACJI---
+0,00000 :: Przybyl klient nr 0 z priorytetem 2 - klient dodany do kolejki. Aktualna wielkosc kolejki: 1
+0,00000 :: Klient nr 0 wszedł do okienka nr 0 aktualna wielkosc kolejki :0
+0,04698 :: Przybyl klient nr 1 z priorytetem 3 - klient dodany do kolejki. Aktualna wielkosc kolejki: 1
+0,04698 :: Klient nr 1 wszedł do okienka nr 1 aktualna wielkosc kolejki :0
+0,48199 :: Przybyl klient nr 2 z priorytetem 3 - klient dodany do kolejki. Aktualna wielkosc kolejki: 1
+0,48199 :: Klient nr 2 wszedł do okienka nr 2 aktualna wielkosc kolejki :0
+0,72579 :: Przybyl klient nr 3 z priorytetem 3 - klient dodany do kolejki. Aktualna wielkosc kolejki: 1
+0,72579 :: Klient nr 3 wszedł do okienka nr 3 aktualna wielkosc kolejki :0
+0,74820 :: Klient 2 opuszcza okienko 2
+1,01135 :: Przybyl klient nr 4 z priorytetem 2 - klient dodany do kolejki. Aktualna wielkosc kolejki: 1
+1,01135 :: Klient nr 4 wszedł do okienka nr 2 aktualna wielkosc kolejki :0
+1,10370 :: Klient 0 opuszcza okienko 0
+1,40574 :: Przybyl klient nr 5 z priorytetem 3 - klient dodany do kolejki. Aktualna wielkosc kolejki: 1
+1,40574 :: Klient nr 5 wszedł do okienka nr 0 aktualna wielkosc kolejki :0
+1,46559 :: Przybyl klient nr 6 z priorytetem 1 - klient dodany do kolejki. Aktualna wielkosc kolejki: 1
+1,46559 :: Klient nr 6 wszedł do okienka nr 4 aktualna wielkosc kolejki :0
+1,72598 :$$$: klient 6 zniecierpliwil sie bedac w okienku 4, obecna strata znicierpliwienia: 1
+1,76597 :: Przybyl klient nr 7 z priorytetem 3 - klient dodany do kolejki. Aktualna wielkosc kolejki: 1
+1,76597 :: Klient nr 7 wszedł do okienka nr 4 aktualna wielkosc kolejki :0
+2,20219 :: Klient 7 opuszcza okienko 4
+3,03082 :: Przybyl klient nr 8 z priorytetem 2 - klient dodany do kolejki. Aktualna wielkosc kolejki: 1
+3,03082 :: Klient nr 8 wszedł do okienka nr 4 aktualna wielkosc kolejki :0
+3,07123 :: Klient 5 opuszcza okienko 0
+3,34059 :: Klient 1 opuszcza okienko 1
+3,67357 :: Klient 4 opuszcza okienko 2
+3,68713 :: Przybyl klient nr 9 z priorytetem 1 - klient dodany do kolejki. Aktualna wielkosc kolejki: 1
+3,68713 :: Klient nr 9 wszedł do okienka nr 0 aktualna wielkosc kolejki :0
+4,00575 :: Przybyl klient nr 10 z priorytetem 2 - klient dodany do kolejki. Aktualna wielkosc kolejki: 1
+4,00575 :: Klient nr 10 wszedł do okienka nr 1 aktualna wielkosc kolejki :0
+4,10527 :: Klient 3 opuszcza okienko 3
+4,10527 :|||: Klient 3 powraca do kolejki
+4,10527 :: Przybyl klient nr 3 z priorytetem 3 - klient dodany do kolejki. Aktualna wielkosc kolejki: 1
+4,10527 :: Klient nr 3 wszedł do okienka nr 2 aktualna wielkosc kolejki :0
+4,11028 :: Klient 10 opuszcza okienko 1
+4,49355 :: Przybyl klient nr 11 z priorytetem 3 - klient dodany do kolejki. Aktualna wielkosc kolejki: 1
+4,49355 :: Klient nr 11 wszedł do okienka nr 1 aktualna wielkosc kolejki :0
+4,56536 :: Klient 3 opuszcza okienko 2
+5,58033 :: Klient 8 opuszcza okienko 4
+6,22245 :: Przybyl klient nr 12 z priorytetem 2 - klient dodany do kolejki. Aktualna wielkosc kolejki: 1
+6,22245 :: Klient nr 12 wszedł do okienka nr 2 aktualna wielkosc kolejki :0
+7,86703 :: Przybyl klient nr 13 z priorytetem 1 - klient dodany do kolejki. Aktualna wielkosc kolejki: 1
+7,86703 :: Klient nr 13 wszedł do okienka nr 3 aktualna wielkosc kolejki :0
+8,53601 :$$$: klient 9 zniecierpliwil sie bedac w okienku 0, obecna strata znicierpliwienia: 2
+8,57460 :: Przybyl klient nr 14 z priorytetem 2 - klient dodany do kolejki. Aktualna wielkosc kolejki: 1
+8,57460 :: Klient nr 14 wszedł do okienka nr 0 aktualna wielkosc kolejki :0
+8,75526 :: Przybyl klient nr 15 z priorytetem 2 - klient dodany do kolejki. Aktualna wielkosc kolejki: 1
+8,75526 :: Klient nr 15 wszedł do okienka nr 4 aktualna wielkosc kolejki :0
+9,35118 :$$$: klient 11 zniecierpliwil sie bedac w okienku 1, obecna strata znicierpliwienia: 3
+9,72427 :: Klient 13 opuszcza okienko 3
+10,18877 :: Przybyl klient nr 16 z priorytetem 3 - klient dodany do kolejki. Aktualna wielkosc kolejki: 1
+10,18877 :: Klient nr 16 wszedł do okienka nr 1 aktualna wielkosc kolejki :0
+10,20541 :: Przybyl klient nr 17 z priorytetem 1 - klient dodany do kolejki. Aktualna wielkosc kolejki: 1
+10,20541 :: Klient nr 17 wszedł do okienka nr 3 aktualna wielkosc kolejki :0
+10,60782 :: Klient 15 opuszcza okienko 4
+10,86149 :: Klient 12 opuszcza okienko 2
+10,88846 :: Klient 17 opuszcza okienko 3
+10,91754 :: Przybyl klient nr 18 z priorytetem 3 - klient dodany do kolejki. Aktualna wielkosc kolejki: 1
+10,91754 :: Klient nr 18 wszedł do okienka nr 2 aktualna wielkosc kolejki :0
+10,98417 :: Przybyl klient nr 19 z priorytetem 1 - klient dodany do kolejki. Aktualna wielkosc kolejki: 1
+10,98417 :: Klient nr 19 wszedł do okienka nr 3 aktualna wielkosc kolejki :0
+11,05194 :: Klient 18 opuszcza okienko 2
+12,16096 :: Przybyl klient nr 20 z priorytetem 2 - klient dodany do kolejki. Aktualna wielkosc kolejki: 1
+12,16096 :: Klient nr 20 wszedł do okienka nr 2 aktualna wielkosc kolejki :0
+12,19039 :: Przybyl klient nr 21 z priorytetem 2 - klient dodany do kolejki. Aktualna wielkosc kolejki: 1
+12,19039 :: Klient nr 21 wszedł do okienka nr 4 aktualna wielkosc kolejki :0
+12,22026 :: Przybyl klient nr 22 z priorytetem 2 - klient dodany do kolejki. Aktualna wielkosc kolejki: 1
+12,22026 :: Klient nr 22 wszedł do okienka nr 5 aktualna wielkosc kolejki :0
+12,40549 :: Klient 16 opuszcza okienko 1
+12,66620 :: Klient 14 opuszcza okienko 0
+12,98620 :: Przybyl klient nr 23 z priorytetem 1 - klient dodany do kolejki. Aktualna wielkosc kolejki: 1
+12,98620 :: Klient nr 23 wszedł do okienka nr 0 aktualna wielkosc kolejki :0
+13,04160 :: Przybyl klient nr 24 z priorytetem 1 - klient dodany do kolejki. Aktualna wielkosc kolejki: 1
+13,04160 :: Klient nr 24 wszedł do okienka nr 1 aktualna wielkosc kolejki :0
+13,31877 :: Przybyl klient nr 25 z priorytetem 3 - klient dodany do kolejki. Aktualna wielkosc kolejki: 1
+13,34447 :: Przybyl klient nr 26 z priorytetem 2 - klient dodany do kolejki. Aktualna wielkosc kolejki: 2
+13,78793 :: Przybyl klient nr 27 z priorytetem 1 - klient dodany do kolejki. Aktualna wielkosc kolejki: 3
+13,81660 :: Przybyl klient nr 28 z priorytetem 1 - klient dodany do kolejki. Aktualna wielkosc kolejki: 4
+13,95158 :: Klient 21 opuszcza okienko 4
+13,95158 :: Klient nr 27 wszedł do okienka nr 4 aktualna wielkosc kolejki :3
+13,97597 :: Klient 27 opuszcza okienko 4
+13,97597 :|||: Klient 27 powraca do kolejki
+13,97597 :: Przybyl klient nr 27 z priorytetem 1 - klient dodany do kolejki. Aktualna wielkosc kolejki: 4
+13,97597 :: Klient nr 28 wszedł do okienka nr 4 aktualna wielkosc kolejki :3
+14,00000 :###: Awaria okienka nr 0
+14,00000 :###: klient 23 przekierowany do kolejki technicznej
+14,00849 :: Klient 24 opuszcza okienko 1
+14,00849 :###: Kolejka techniczna - Klient nr 23 wszedł do okienka nr 1 aktualna wielkosc kolejki technicznej : 0
+14,07598 :: Przybyl klient nr 29 z priorytetem 2 - klient dodany do kolejki. Aktualna wielkosc kolejki: 4
+14,11543 :: Przybyl klient nr 30 z priorytetem 3 - klient dodany do kolejki. Aktualna wielkosc kolejki: 5
+15,00000 :###: Awaria okienka nr 1
+15,00000 :###: klient 23 przekierowany do kolejki technicznej
+15,10549 :###: Okienko nr 0 naprawione
+15,10549 :###: Kolejka techniczna - Klient nr 23 wszedł do okienka nr 0 aktualna wielkosc kolejki technicznej : 0
+15,24876 :: Przybyl klient nr 31 z priorytetem 1 - klient dodany do kolejki. Aktualna wielkosc kolejki: 6
+15,44097 :: Klient 23 opuszcza okienko 0
+15,44097 :: Klient nr 27 wszedł do okienka nr 0 aktualna wielkosc kolejki :5
+15,44451 :: Przybyl klient nr 32 z priorytetem 3 - klient dodany do kolejki. Aktualna wielkosc kolejki: 6
+15,61108 :: Klient 19 opuszcza okienko 3
+15,61108 :: Klient nr 31 wszedł do okienka nr 3 aktualna wielkosc kolejki :5
+15,74297 :: Przybyl klient nr 33 z priorytetem 2 - klient dodany do kolejki. Aktualna wielkosc kolejki: 6
+15,80602 :: Klient 27 opuszcza okienko 0
+15,80602 :|||: Klient 27 powraca do kolejki
+15,80602 :: Przybyl klient nr 27 z priorytetem 1 - klient dodany do kolejki. Aktualna wielkosc kolejki: 7
+15,80602 :: Klient nr 27 wszedł do okienka nr 0 aktualna wielkosc kolejki :6
+15,93672 :###: Okienko nr 1 naprawione
+15,93672 :: Klient nr 26 wszedł do okienka nr 1 aktualna wielkosc kolejki :5
+16,00000 :###: Awaria okienka nr 2
+16,00000 :###: klient 20 przekierowany do kolejki technicznej
+16,22858 :###: Okienko nr 2 naprawione
+16,22858 :###: Kolejka techniczna - Klient nr 20 wszedł do okienka nr 2 aktualna wielkosc kolejki technicznej : 0
+16,30777 :: Klient 20 opuszcza okienko 2
+16,30777 :: Klient nr 29 wszedł do okienka nr 2 aktualna wielkosc kolejki :4
+16,38783 :: Przybyl klient nr 34 z priorytetem 1 - klient dodany do kolejki. Aktualna wielkosc kolejki: 5
+16,44816 :: Przybyl klient nr 35 z priorytetem 3 - klient dodany do kolejki. Aktualna wielkosc kolejki: 6
+16,54165 :: Przybyl klient nr 36 z priorytetem 3 - klient dodany do kolejki. Aktualna wielkosc kolejki: 7
+16,68294 :: Klient 31 opuszcza okienko 3
+16,68294 :|||: Klient 31 powraca do kolejki
+16,68294 :: Przybyl klient nr 31 z priorytetem 1 - klient dodany do kolejki. Aktualna wielkosc kolejki: 8
+16,68294 :: Klient nr 34 wszedł do okienka nr 3 aktualna wielkosc kolejki :7
+17,00000 :###: Awaria okienka nr 3
+17,00000 :###: klient 34 przekierowany do kolejki technicznej
+17,11126 :: Klient 28 opuszcza okienko 4
+17,11126 :###: Kolejka techniczna - Klient nr 34 wszedł do okienka nr 4 aktualna wielkosc kolejki technicznej : 0
+17,38533 :$$$: klient 31 zniecierpliwil sie bedac w kolejce, obecna strata znicierpliwienia: 4
+17,95150 :: Przybyl klient nr 37 z priorytetem 1 - klient dodany do kolejki. Aktualna wielkosc kolejki: 7
+18,00000 :###: Awaria okienka nr 4
+18,00000 :###: klient 34 przekierowany do kolejki technicznej
+18,24299 :: Przybyl klient nr 38 z priorytetem 1 - klient dodany do kolejki. Aktualna wielkosc kolejki: 8
+18,41690 :: Klient 27 opuszcza okienko 0
+18,41690 :###: Kolejka techniczna - Klient nr 34 wszedł do okienka nr 0 aktualna wielkosc kolejki technicznej : 0
+18,57812 :: Klient 26 opuszcza okienko 1
+18,57812 :: Klient nr 37 wszedł do okienka nr 1 aktualna wielkosc kolejki :7
+18,66133 :: Przybyl klient nr 39 z priorytetem 2 - klient dodany do kolejki. Aktualna wielkosc kolejki: 8
+19,00000 :###: Awaria okienka nr 5
+19,00000 :###: klient 22 przekierowany do kolejki technicznej
+19,16369 :$$$: klient 29 zniecierpliwil sie bedac w okienku 2, obecna strata znicierpliwienia: 5
+19,16369 :###: Kolejka techniczna - Klient nr 22 wszedł do okienka nr 2 aktualna wielkosc kolejki technicznej : 0
+19,18358 :###: Okienko nr 3 naprawione
+19,18358 :: Klient nr 38 wszedł do okienka nr 3 aktualna wielkosc kolejki :7
+19,18947 :: Przybyl klient nr 40 z priorytetem 3 - klient dodany do kolejki. Aktualna wielkosc kolejki: 8
+19,23792 :: Przybyl klient nr 41 z priorytetem 3 - klient dodany do kolejki. Aktualna wielkosc kolejki: 9
+19,34734 :: Przybyl klient nr 42 z priorytetem 3 - klient dodany do kolejki. Aktualna wielkosc kolejki: 10
+19,38560 :: Przybyl klient nr 43 z priorytetem 1 - klient dodany do kolejki. Aktualna wielkosc kolejki: 11
+19,50486 :: Przybyl klient nr 44 z priorytetem 3 - klient dodany do kolejki. Aktualna wielkosc kolejki: 12
+19,74019 :###: Awaria okienka nr 1
+19,74019 :###: klient 37 przekierowany do kolejki technicznej
+20,41815 :###: Okienko nr 5 naprawione
+20,41815 :###: Kolejka techniczna - Klient nr 37 wszedł do okienka nr 5 aktualna wielkosc kolejki technicznej : 0
+20,79774 :: Klient 34 opuszcza okienko 0
+20,79774 :: Klient nr 43 wszedł do okienka nr 0 aktualna wielkosc kolejki :11
+21,14571 :$$$: klient 39 zniecierpliwil sie bedac w kolejce, obecna strata znicierpliwienia: 6
+21,46487 :: Przybyl klient nr 45 z priorytetem 2 - klient dodany do kolejki. Aktualna wielkosc kolejki: 11

@@ -21,9 +21,9 @@ public class LeavingTheWindow extends BasicSimEvent<Bank, Object> {
     protected void stateChange() throws SimControlException {
         bank = getSimObj();
         bank.appendTextToLogs(String.format("%.5f",simTime()) + " :: Klient " + customer.getId() + " opuszcza okienko " + window.getId());
-        bank.getCzasObslugi().setValue(simTime() - customer.getStartObslugi());
+        bank.getServingTime().setValue(simTime() - customer.getServingTimeStart());
 
-        customer.setInOkienko(false);
+        customer.setInWindow(false);
 
         if (Math.abs(bank.getSimGenerator().nextInt()) % 10 == 0) {
             bank.appendTextToLogs(String.format("%.5f",simTime()) + " :|||: Klient " + customer.getId() + " powraca do kolejki");
@@ -31,12 +31,12 @@ public class LeavingTheWindow extends BasicSimEvent<Bank, Object> {
         }
         else
         {
-            bank.getIloscWOddziale().setValue(bank.getKlienciWOkienkach() + bank.getCustomerQueue().getSize() + bank.getCustomerQueueTechniczna().getSize());
-            customer.setWyszedl(true);
+            bank.getNumberOfCustomersInBankBranch().setValue(bank.getKlienciWOkienkach() + bank.getCustomerQueue().getSize() + bank.getCustomerTechnicalQueue().getSize());
+            customer.setIfCustomerCameOut(true);
         }
-        window.setWolne(true);
+        window.setAvaliable(true);
 
-        if (window.getCustomerQueue().getSize() > 0 || window.getCustomerQueueTechniczna().getSize() > 0) {
+        if (window.getCustomerQueue().getSize() > 0 || window.getCustomerTechnicalQueue().getSize() > 0) {
             new ApproachToTheWindow(bank, window, 0);
         }
     }
@@ -46,7 +46,7 @@ public class LeavingTheWindow extends BasicSimEvent<Bank, Object> {
         bank = getSimObj();
 
 
-        if (window.getCustomerQueue().getSize() > 0 && window.isWolne()) {
+        if (window.getCustomerQueue().getSize() > 0 && window.isAvaliable()) {
             new ApproachToTheWindow(bank, window, 0);
         }
 

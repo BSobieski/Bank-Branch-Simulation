@@ -14,13 +14,13 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         this.primaryStage = primaryStage;
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../../../resources/layout.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("layout.fxml"));
         Parent root = loader.load();
         controller = loader.getController();
         primaryStage.setResizable(false);
         mainScene = new Scene(root, 1200, 800);
         primaryStage.setScene(mainScene);
-        primaryStage.setTitle("Projekt Banku");
+        primaryStage.setTitle("Bank Simulation Project");
         primaryStage.show();
     }
 

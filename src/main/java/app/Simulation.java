@@ -28,9 +28,9 @@ public class Simulation extends Thread {
                 maxKolejka,max_klientow,ilosc_okienek,ilosc_priorytetow,dlugowsObslugi);
         bank = new Bank(environment, simManager);
 
-        for(int i=0;i<bank.getOkienka().length;i++){
+        for(int i = 0; i<bank.getWindowsTab().length; i++){
             try {
-                new WindowBreakdown(bank,i,bank.getEnvironment().awaria+i);
+                new WindowBreakdown(bank,i,bank.getEnvironment().breakdownTimeDelay +i);
             } catch (SimControlException e) {
                 e.printStackTrace();
             }
@@ -75,18 +75,18 @@ public class Simulation extends Thread {
     {
         bank.appendTextToLogs("\n\n\t\t ---PODSUMOWANIE---");
         bank.appendTextToLogs("\nStrata klientow wynikajaca z przepelnienia kolejki");
-        bank.appendTextToLogs(String.valueOf(bank.getStrata() + 1));
+        bank.appendTextToLogs(String.valueOf(bank.getLossOfCustomers() + 1));
         bank.appendTextToLogs("\nStrata klientow wynikajaca ze zniecierpliwienia");
-        bank.appendTextToLogs(String.valueOf(bank.getStrataZniecierpliwienia()));
+        bank.appendTextToLogs(String.valueOf(bank.getImpatientLoss()));
         bank.appendTextToLogs("\nOczekiwana graniczna liczbę klientów w oddziale");
-        bank.appendTextToLogs(String.valueOf(Statistics.arithmeticMean(bank.getIloscWOddziale())));
+        bank.appendTextToLogs(String.valueOf(Statistics.arithmeticMean(bank.getNumberOfCustomersInBankBranch())));
         bank.appendTextToLogs("\nOczekiwana graniczna liczbę klientów w kolejce");
-        bank.appendTextToLogs(String.valueOf(Statistics.arithmeticMean(bank.getIloscWKolejce())));
+        bank.appendTextToLogs(String.valueOf(Statistics.arithmeticMean(bank.getNumberOfCustomersInQueue())));
         bank.appendTextToLogs("\nOczekiwany graniczny czas oczekiwania klienta w kolejce na rozpoczęcie obsługi");
-        bank.appendTextToLogs(String.valueOf(Statistics.arithmeticMean(bank.getCzasOczekiwaniaWKolejce())));
+        bank.appendTextToLogs(String.valueOf(Statistics.arithmeticMean(bank.getWaitingTimeInQueue())));
         bank.appendTextToLogs("\nOczekiwany graniczny czas obsługi klienta");
-        bank.appendTextToLogs(String.valueOf(Statistics.arithmeticMean(bank.getCzasObslugi())));
+        bank.appendTextToLogs(String.valueOf(Statistics.arithmeticMean(bank.getServingTime())));
         bank.appendTextToLogs("\nGraniczne prawdopodobieństwo rezygnacji z obsługi przez klienta");
-        bank.appendTextToLogs(String.valueOf((double) bank.getStrataZniecierpliwienia()/bank.getMax_klientow()));
+        bank.appendTextToLogs(String.valueOf((double) bank.getImpatientLoss()/bank.getMaxLimitOfCustomers()));
     }
 }

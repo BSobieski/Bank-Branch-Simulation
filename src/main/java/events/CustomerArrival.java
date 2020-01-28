@@ -23,15 +23,15 @@ public class CustomerArrival extends BasicSimEvent<Bank, Object>
         if (customer == null)
         {
             customer = new Customer();
-            new ImpatienceOfTheCustomer(bank, bank.getSimGenerator().exponential(bank.getEnvironment().niecierpliwosc), customer);
-            customer.setPriorytet(Math.abs(bank.getSimGenerator().nextInt()) % bank.getEnvironment().ilosc_priorytetow + 1);
+            new ImpatienceOfTheCustomer(bank, bank.getSimGenerator().exponential(bank.getEnvironment().impatienceTimeDelay), customer);
+            customer.setPriority(Math.abs(bank.getSimGenerator().nextInt()) % bank.getEnvironment().numberOfPriorities + 1);
         } else
         {
             staryKlient = true;
         }
 
-        bank.setIlosc_klientow(bank.getIlosc_klientow() + 1);
-        if (bank.getIlosc_klientow() == bank.getMax_klientow())
+        bank.setCurrentNumberOfCustomers(bank.getCurrentNumberOfCustomers() + 1);
+        if (bank.getCurrentNumberOfCustomers() == bank.getMaxLimitOfCustomers())
         {
            // bank.appendTextToLogs(String.format("%.5f", simTime()) + ":: -----Konczenie przybywania klientow - osiagnieto limit-----");
         }
@@ -42,24 +42,24 @@ public class CustomerArrival extends BasicSimEvent<Bank, Object>
 
         if (!wszedl)
         {
-            bank.setStrata(bank.getStrata() + 1);
+            bank.setLossOfCustomers(bank.getLossOfCustomers() + 1);
             bank.appendTextToLogs(String.format("%.5f", simTime()) + " :$$$: Przybyl klient nr " + customer.getId()
-                    + " brak miejsca w kolejce - strata naliczona. Aktualna strata: " + bank.getStrata());
+                    + " brak miejsca w kolejce - strata naliczona. Aktualna strata: " + bank.getLossOfCustomers());
 
-            customer.setWyszedl(true);
+            customer.setIfCustomerCameOut(true);
         } else
         {
-            bank.appendTextToLogs(String.format("%.5f", simTime()) + " :: Przybyl klient nr " + customer.getId() + " z priorytetem " + customer.getPriorytet()
+            bank.appendTextToLogs(String.format("%.5f", simTime()) + " :: Przybyl klient nr " + customer.getId() + " z priorytetem " + customer.getPriority()
                     + " - klient dodany do kolejki. Aktualna wielkosc kolejki: " + bank.getCustomerQueue().getSize());
-            bank.getIloscWKolejce().setValue(bank.getCustomerQueue().getSize());
-            bank.getIloscWOddziale().setValue(bank.getKlienciWOkienkach() + bank.getCustomerQueue().getSize() + bank.getCustomerQueueTechniczna().getSize());
-            customer.setStartCzekania(simTime());
+            bank.getNumberOfCustomersInQueue().setValue(bank.getCustomerQueue().getSize());
+            bank.getNumberOfCustomersInBankBranch().setValue(bank.getKlienciWOkienkach() + bank.getCustomerQueue().getSize() + bank.getCustomerTechnicalQueue().getSize());
+            customer.setWaitingTimeStart(simTime());
         }
 
 
-        for (Window window : bank.getOkienka())
+        for (Window window : bank.getWindowsTab())
         {
-            if (window.getCustomerQueue().getSize() == 1 && window.isWolne())
+            if (window.getCustomerQueue().getSize() == 1 && window.isAvaliable())
             {
                 ApproachToTheWindow approachToTheWindow = new ApproachToTheWindow(bank, window, 0);
                 approachToTheWindow.onTermination();
@@ -70,9 +70,9 @@ public class CustomerArrival extends BasicSimEvent<Bank, Object>
 
         if (!staryKlient)
         {
-            if (bank.getMax_klientow() > bank.getIlosc_klientow())
+            if (bank.getMaxLimitOfCustomers() > bank.getCurrentNumberOfCustomers())
             {
-                double dt = bank.getSimGenerator().exponential(bank.getEnvironment().przyjscieKlienta);
+                double dt = bank.getSimGenerator().exponential(bank.getEnvironment().customerArrivalTimeDelay);
                 new CustomerArrival(bank, null, dt);
             }
         }
