@@ -1,19 +1,20 @@
-package obiekty;
+package objects;
 
 import java.util.Collections;
 import java.util.LinkedList;
 
-public class Kolejka {
+public class CustomerQueue
+{
 
-    private LinkedList<Klient> kolejka = new LinkedList<Klient>();
+    private LinkedList<Customer> kolejka = new LinkedList<Customer>();
 
     private int MaxSize;
 
-    public Kolejka(int maxSize) {
+    public CustomerQueue(int maxSize) {
         this.MaxSize = maxSize;
     }
 
-    public boolean addClient(Klient client) {
+    public boolean addClient(Customer client) {
         if (kolejka.size() < MaxSize) {
             kolejka.add(client);
             return true;
@@ -22,10 +23,10 @@ public class Kolejka {
         }
     }
 
-    public Klient getAndRemovePriorityFirst()
+    public Customer getAndRemovePriorityFirst()
     {
         Collections.sort(kolejka);
-        Klient pasazer = kolejka.getFirst();
+        Customer pasazer = kolejka.getFirst();
         kolejka.removeFirst();
         return pasazer;
     }
@@ -34,11 +35,11 @@ public class Kolejka {
         return kolejka.size();
     }
 
-    public void remove(Klient klient) {
-        kolejka.remove(klient);
+    public void remove(Customer customer) {
+        kolejka.remove(customer);
     }
 
-    public Klient at(int index) {
+    public Customer at(int index) {
         return kolejka.get(index);
     }
 

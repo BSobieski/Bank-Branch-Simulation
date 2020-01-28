@@ -1,18 +1,19 @@
-package obiekty;
+package objects;
 
-public class Okienko {
+public class Window
+{
 
     boolean wolne;
     boolean awaria;
-    Kolejka kolejka;
-    Kolejka kolejkaTechniczna;
+    CustomerQueue customerQueue;
+    CustomerQueue customerQueueTechniczna;
     int id;
     int strata;
 
-    public Okienko(int id, Kolejka kolejka, Kolejka kolejkaTechniczna) {
+    public Window(int id, CustomerQueue customerQueue, CustomerQueue customerQueueTechniczna) {
         this.id = id;
-        this.kolejka = kolejka;
-        this.kolejkaTechniczna = kolejkaTechniczna;
+        this.customerQueue = customerQueue;
+        this.customerQueueTechniczna = customerQueueTechniczna;
         wolne = true;
         awaria = false;
     }
@@ -27,14 +28,14 @@ public class Okienko {
         this.wolne = wolne;
     }
 
-    public Kolejka getKolejka()
+    public CustomerQueue getCustomerQueue()
     {
-        return kolejka;
+        return customerQueue;
     }
 
-    public void setKolejka(Kolejka kolejka)
+    public void setCustomerQueue(CustomerQueue customerQueue)
     {
-        this.kolejka = kolejka;
+        this.customerQueue = customerQueue;
     }
 
     public int getId()
@@ -57,8 +58,8 @@ public class Okienko {
         this.strata = strata;
     }
 
-    public Kolejka getKolejkaTechniczna() {
-        return kolejkaTechniczna;
+    public CustomerQueue getCustomerQueueTechniczna() {
+        return customerQueueTechniczna;
     }
 
     public boolean isAwaria() {

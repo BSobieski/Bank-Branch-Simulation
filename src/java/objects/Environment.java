@@ -1,6 +1,7 @@
-package obiekty;
+package objects;
 
-public class Otoczenie {
+public class Environment
+{
 
     public double obslugaOkienka;
     public double przyjscieKlienta;
@@ -14,8 +15,8 @@ public class Otoczenie {
     public int ilosc_priorytetow;
 
 
-    public Otoczenie(double obslugaOkienka, double przyjscieKlienta, double awaria, double naprawa, double niecierpliwosc, int maxKolejka,
-                     int max_klientow, int ilosc_okienek, int ilosc_priorytetow, int dlugowsObslugi)
+    public Environment(double obslugaOkienka, double przyjscieKlienta, double awaria, double naprawa, double niecierpliwosc, int maxKolejka,
+                       int max_klientow, int ilosc_okienek, int ilosc_priorytetow, int dlugowsObslugi)
     {
         this.obslugaOkienka = obslugaOkienka;
         this.przyjscieKlienta = przyjscieKlienta;

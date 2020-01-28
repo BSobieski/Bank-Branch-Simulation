@@ -1,15 +1,15 @@
-package wydarzenia;
+package events;
 
 import dissimlab.simcore.BasicSimEvent;
 import dissimlab.simcore.SimControlException;
-import obiekty.Bank;
+import objects.Bank;
 
-public class NaprawaOkienka extends BasicSimEvent<Bank, Object> {
+public class WindowReparation extends BasicSimEvent<Bank, Object> {
 
 
     int okienko;
 
-    public NaprawaOkienka(Bank entity, int okienko, double delay) throws SimControlException {
+    public WindowReparation(Bank entity, int okienko, double delay) throws SimControlException {
         super(entity, delay);
         this.okienko = okienko;
     }
@@ -22,13 +22,13 @@ public class NaprawaOkienka extends BasicSimEvent<Bank, Object> {
         bank.getOkienka()[okienko].setWolne(true);
         bank.getOkienka()[okienko].setAwaria(false);
 
-        if (bank.getOkienka()[okienko].getKolejka().getSize() > 0 && bank.getOkienka()[okienko].isWolne()) {
-            new PodejscieDoOkienka(bank, bank.getOkienka()[okienko], 0);
+        if (bank.getOkienka()[okienko].getCustomerQueue().getSize() > 0 && bank.getOkienka()[okienko].isWolne()) {
+            new ApproachToTheWindow(bank, bank.getOkienka()[okienko], 0);
         }
 
         if (bank.getMax_klientow() > bank.getIlosc_klientow()) {
-            double delay = bank.getSimGenerator().exponential(bank.getOtoczenie().awaria);
-            new AwariaOkienka(bank, okienko, delay);
+            double delay = bank.getSimGenerator().exponential(bank.getEnvironment().awaria);
+            new WindowBreakdown(bank, okienko, delay);
         }
     }
 

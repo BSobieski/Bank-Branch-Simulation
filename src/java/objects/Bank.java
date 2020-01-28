@@ -1,10 +1,10 @@
-package obiekty;
+package objects;
 
 import dissimlab.monitors.MonitoredVar;
 import dissimlab.random.SimGenerator;
 import dissimlab.simcore.BasicSimObj;
 import dissimlab.simcore.SimManager;
-import wydarzenia.OpuszczenieOkienka;
+import events.LeavingTheWindow;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -14,15 +14,15 @@ import java.io.PrintWriter;
 public class Bank extends BasicSimObj {
 
     SimGenerator simGenerator = new SimGenerator();
-    Okienko[] okienka;
+    Window[] okienka;
     int strata;
-    Otoczenie otoczenie;
+    Environment environment;
     int max_klientow;
     int ilosc_klientow;
     int strataZniecierpliwienia = 0;
-    Kolejka kolejka;
-    Kolejka kolejkaTechniczna;
-    OpuszczenieOkienka opuszczeniaOkienka[];
+    CustomerQueue customerQueue;
+    CustomerQueue customerQueueTechniczna;
+    LeavingTheWindow opuszczeniaOkienka[];
     SimManager simManager;
     int logState;
     PrintWriter printWriter;
@@ -33,18 +33,18 @@ public class Bank extends BasicSimObj {
 
 
 
-    public Bank(Otoczenie otoczenie, SimManager simManager) {
+    public Bank(Environment environment, SimManager simManager) {
         this.simManager = simManager;
         logState = 0;
-        this.otoczenie = otoczenie;
-        opuszczeniaOkienka = new OpuszczenieOkienka[otoczenie.ilosc_okienek];
-        this.max_klientow = otoczenie.max_klientow;
+        this.environment = environment;
+        opuszczeniaOkienka = new LeavingTheWindow[environment.ilosc_okienek];
+        this.max_klientow = environment.max_klientow;
         ilosc_klientow = 0;
-        okienka = new Okienko[otoczenie.ilosc_okienek];
-        kolejka = new Kolejka(otoczenie.maxKolejka);
-        kolejkaTechniczna = new Kolejka(otoczenie.maxKolejka);
+        okienka = new Window[environment.ilosc_okienek];
+        customerQueue = new CustomerQueue(environment.maxKolejka);
+        customerQueueTechniczna = new CustomerQueue(environment.maxKolejka);
         for (int i = 0; i < okienka.length; i++) {
-            okienka[i] = new Okienko(i, kolejka, kolejkaTechniczna);
+            okienka[i] = new Window(i, customerQueue, customerQueueTechniczna);
         }
         iloscWKolejce = new MonitoredVar(0,simManager);
         iloscWOddziale = new MonitoredVar(0,simManager);
@@ -65,12 +65,12 @@ public class Bank extends BasicSimObj {
         this.simGenerator = simGenerator;
     }
 
-    public Okienko[] getOkienka()
+    public Window[] getOkienka()
     {
         return okienka;
     }
 
-    public void setOkienka(Okienko[] okienka)
+    public void setOkienka(Window[] okienka)
     {
         this.okienka = okienka;
     }
@@ -85,14 +85,14 @@ public class Bank extends BasicSimObj {
         this.strata = strata;
     }
 
-    public Otoczenie getOtoczenie()
+    public Environment getEnvironment()
     {
-        return otoczenie;
+        return environment;
     }
 
-    public void setOtoczenie(Otoczenie otoczenie)
+    public void setEnvironment(Environment environment)
     {
-        this.otoczenie = otoczenie;
+        this.environment = environment;
     }
 
     public int getMax_klientow()
@@ -125,28 +125,28 @@ public class Bank extends BasicSimObj {
         this.strataZniecierpliwienia = strataZniecierpliwienia;
     }
 
-    public Kolejka getKolejka()
+    public CustomerQueue getCustomerQueue()
     {
-        return kolejka;
+        return customerQueue;
     }
 
-    public void setKolejka(Kolejka kolejka)
+    public void setCustomerQueue(CustomerQueue customerQueue)
     {
-        this.kolejka = kolejka;
+        this.customerQueue = customerQueue;
     }
 
-    public OpuszczenieOkienka[] getOpuszczeniaOkienka()
+    public LeavingTheWindow[] getOpuszczeniaOkienka()
     {
         return opuszczeniaOkienka;
     }
 
-    public void setOpuszczeniaOkienka(OpuszczenieOkienka[] opuszczeniaOkienka)
+    public void setOpuszczeniaOkienka(LeavingTheWindow[] opuszczeniaOkienka)
     {
         this.opuszczeniaOkienka = opuszczeniaOkienka;
     }
 
-    public Kolejka getKolejkaTechniczna() {
-        return kolejkaTechniczna;
+    public CustomerQueue getCustomerQueueTechniczna() {
+        return customerQueueTechniczna;
     }
 
     public void appendTextToLogs(String message) {
@@ -163,12 +163,12 @@ public class Bank extends BasicSimObj {
     {
         File plik = new File("src/main/resources/log.txt");
         if (plik.isFile()) {
-            //  System.out.println("plik istnieje");
+            System.out.println("File is already existing");
         } else {
             try {
                 boolean b = plik.createNewFile();
             } catch (IOException e) {
-                //  System.out.println("Nie mo?na utworzy? pliku");
+                System.out.println("Couldn't create file");
             }
         }
     }
@@ -207,7 +207,7 @@ public class Bank extends BasicSimObj {
     public int getKlienciWOkienkach()
     {
         int klienciWOkienkach = 0;
-        for(Okienko i : okienka)
+        for(Window i : okienka)
         {
             if (!i.isWolne())
                 klienciWOkienkach++;

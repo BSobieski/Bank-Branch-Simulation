@@ -1,8 +1,8 @@
-package obiekty;
+package objects;
 
 import java.util.concurrent.atomic.AtomicLong;
 
-public class Klient implements Comparable<Klient>{
+public class Customer implements Comparable<Customer>{
     private static AtomicLong idCounter = new AtomicLong();
     long id;
     boolean wyszedl = false;
@@ -12,7 +12,7 @@ public class Klient implements Comparable<Klient>{
     double startCzekania;
     double startObslugi;
 
-    public Klient() {
+    public Customer() {
         this.id = idCounter.getAndIncrement();
         inOkienko = false;
     }
@@ -24,7 +24,7 @@ public class Klient implements Comparable<Klient>{
 
     public static void setIdCounter(AtomicLong idCounter)
     {
-        Klient.idCounter = idCounter;
+        Customer.idCounter = idCounter;
     }
 
     public long getId()
@@ -78,7 +78,7 @@ public class Klient implements Comparable<Klient>{
     }
 
     @Override
-    public int compareTo(Klient o)
+    public int compareTo(Customer o)
     {
         return this.getPriorytet().compareTo(o.getPriorytet());
     }

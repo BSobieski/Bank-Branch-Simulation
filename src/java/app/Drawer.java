@@ -12,7 +12,7 @@ import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
-import obiekty.Bank;
+import objects.Bank;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -39,7 +39,7 @@ public class Drawer extends Thread{
         Random rand = new Random();
 
         //Stworzenie tablicy kolorów dla oznaczenia priorytetow
-        for(int x=0; x<=bank.getOtoczenie().ilosc_priorytetow; x++) {
+        for(int x = 0; x<=bank.getEnvironment().ilosc_priorytetow; x++) {
             int r = rand.nextInt(256);
             int g = rand.nextInt(256);
             int b = rand.nextInt(256);
@@ -121,7 +121,7 @@ public class Drawer extends Thread{
 
                 currX = 30;
                 currY = 30;
-                for (int x = 0; x < bank.getKolejkaTechniczna().getSize(); x++) {
+                for (int x = 0; x < bank.getCustomerQueueTechniczna().getSize(); x++) {
                     if (currX + klientRadius * 2 > 500) {
                         currX = 30;
                         currY += 50;
@@ -135,7 +135,7 @@ public class Drawer extends Thread{
                 currX = 30;
                 currY = 300;
                 //Rysowanie kolejki
-                for (int x = 0; x < bank.getKolejka().getSize(); x++) {
+                for (int x = 0; x < bank.getCustomerQueue().getSize(); x++) {
                     if (currX + klientRadius * 2 > 500) {
                         currX = 30;
                         currY += 50;
@@ -175,8 +175,8 @@ public class Drawer extends Thread{
         circle.setStroke(Paint.valueOf("#000000"));
         drawingPane.getChildren().add(circle);
 
-        if (bank.getKolejka().getSize() > x) {
-            int priorytet = bank.getKolejka().at(x).getPriorytet();
+        if (bank.getCustomerQueue().getSize() > x) {
+            int priorytet = bank.getCustomerQueue().at(x).getPriorytet();
             Label label = new Label(String.valueOf(priorytet));
             if (priorytet > 9)
             {

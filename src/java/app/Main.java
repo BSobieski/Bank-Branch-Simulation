@@ -14,7 +14,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         this.primaryStage = primaryStage;
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("layout.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../../../resources/layout.fxml"));
         Parent root = loader.load();
         controller = loader.getController();
         primaryStage.setResizable(false);

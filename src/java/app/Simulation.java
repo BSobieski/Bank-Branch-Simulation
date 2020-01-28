@@ -5,10 +5,10 @@ import dissimlab.simcore.SimControlException;
 import dissimlab.simcore.SimManager;
 import dissimlab.simcore.SimParameters;
 import javafx.scene.control.Control;
-import obiekty.Bank;
-import obiekty.Otoczenie;
-import wydarzenia.AwariaOkienka;
-import wydarzenia.PrzybycieKlienta;
+import objects.Bank;
+import objects.Environment;
+import events.WindowBreakdown;
+import events.CustomerArrival;
 
 import java.util.ArrayList;
 
@@ -24,19 +24,19 @@ public class Simulation extends Thread {
         simManager.setEndSimTime(100);
         simManager.setSimTimeRatio(2);
         SimManager.simMode = SimParameters.SimMode.ASTRONOMICAL;
-        Otoczenie otoczenie = new Otoczenie(obsługaOkienka,przyjscieKlienta,awaria,naprawa,niecierpliwosc,
+        Environment environment = new Environment(obsługaOkienka,przyjscieKlienta,awaria,naprawa,niecierpliwosc,
                 maxKolejka,max_klientow,ilosc_okienek,ilosc_priorytetow,dlugowsObslugi);
-        bank = new Bank(otoczenie, simManager);
+        bank = new Bank(environment, simManager);
 
         for(int i=0;i<bank.getOkienka().length;i++){
             try {
-                new AwariaOkienka(bank,i,bank.getOtoczenie().awaria+i);
+                new WindowBreakdown(bank,i,bank.getEnvironment().awaria+i);
             } catch (SimControlException e) {
                 e.printStackTrace();
             }
         }
         try {
-            new PrzybycieKlienta(bank,null,0);
+            new CustomerArrival(bank,null,0);
         } catch (SimControlException e) {
             e.printStackTrace();
         }

@@ -1,15 +1,15 @@
-package wydarzenia;
+package events;
 
 import dissimlab.simcore.BasicSimEvent;
 import dissimlab.simcore.SimControlException;
-import obiekty.Bank;
-import obiekty.Klient;
+import objects.Bank;
+import objects.Customer;
 
-public class AwariaOkienka extends BasicSimEvent<Bank, Object> {
+public class WindowBreakdown extends BasicSimEvent<Bank, Object> {
 
     int idOkienka;
 
-    public AwariaOkienka(Bank entity, int idOkienka, double delay) throws SimControlException {
+    public WindowBreakdown(Bank entity, int idOkienka, double delay) throws SimControlException {
         super(entity, delay);
         this.idOkienka = idOkienka;
     }
@@ -21,19 +21,19 @@ public class AwariaOkienka extends BasicSimEvent<Bank, Object> {
         if (bank.getOpuszczeniaOkienka()[idOkienka] != null) {
             bank.getOpuszczeniaOkienka()[idOkienka].onInterruption();
             if(!bank.getOkienka()[idOkienka].isWolne()) {
-                Klient klient = bank.getOpuszczeniaOkienka()[idOkienka].getKlient();
+                Customer customer = bank.getOpuszczeniaOkienka()[idOkienka].getCustomer();
                 bank.getOpuszczeniaOkienka()[idOkienka].terminate();
-                klient.setPriorytet(0);
-                klient.setInOkienko(false);
-                bank.getKolejkaTechniczna().addClient(klient);
-                bank.appendTextToLogs(String.format("%.5f",simTime()) + " :###: klient " + klient.getId() + " przekierowany do kolejki technicznej" );
-                klient.setStartCzekania(simTime());
+                customer.setPriorytet(0);
+                customer.setInOkienko(false);
+                bank.getCustomerQueueTechniczna().addClient(customer);
+                bank.appendTextToLogs(String.format("%.5f",simTime()) + " :###: klient " + customer.getId() + " przekierowany do kolejki technicznej" );
+                customer.setStartCzekania(simTime());
             }
         }
         bank.getOkienka()[idOkienka].setWolne(false);
         bank.getOkienka()[idOkienka].setAwaria(true);
-        double dt = bank.getSimGenerator().exponential(bank.getOtoczenie().naprawa);
-        new NaprawaOkienka(bank, idOkienka, dt);
+        double dt = bank.getSimGenerator().exponential(bank.getEnvironment().naprawa);
+        new WindowReparation(bank, idOkienka, dt);
     }
 
     @Override
