@@ -3,7 +3,7 @@ package objects;
 public class Environment
 {
 
-    public double windowServingTimeDelay;
+    private double windowServingTimeDelay;
     public double customerArrivalTimeDelay;
     public double breakdownTimeDelay;
     public double reparationTimeDelay;

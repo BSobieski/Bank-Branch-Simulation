@@ -10,15 +10,19 @@ public class CustomerQueue
 
     private int queueMaxSize;
 
-    public CustomerQueue(int queueMaxSize) {
+    public CustomerQueue(int queueMaxSize)
+    {
         this.queueMaxSize = queueMaxSize;
     }
 
-    public boolean addClient(Customer client) {
-        if (customerLinkedList.size() < queueMaxSize) {
+    public boolean addClient(Customer client)
+    {
+        if (customerLinkedList.size() < queueMaxSize)
+        {
             customerLinkedList.add(client);
             return true;
-        } else {
+        } else
+        {
             return false;
         }
     }
@@ -31,15 +35,18 @@ public class CustomerQueue
         return customer;
     }
 
-    public int getSize() {
+    public int getSize()
+    {
         return customerLinkedList.size();
     }
 
-    public void remove(Customer customer) {
+    public void remove(Customer customer)
+    {
         customerLinkedList.remove(customer);
     }
 
-    public Customer at(int index) {
+    public Customer at(int index)
+    {
         return customerLinkedList.get(index);
     }
 }

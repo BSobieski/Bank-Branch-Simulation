@@ -2,39 +2,26 @@ package objects;
 
 import java.util.concurrent.atomic.AtomicLong;
 
-public class Customer implements Comparable<Customer>{
+public class Customer implements Comparable<Customer>
+{
     private static AtomicLong idCounter = new AtomicLong();
-    long id;
-    boolean ifCustomerCameOut = false;
-    int priority;
-    boolean isInWindow;
-    int numberOfWindow;
-    double waitingTimeStart;
-    double servingTimeStart;
+    private long id;
+    private boolean ifCustomerCameOut = false;
+    private int priority;
+    private boolean isInWindow;
+    private int numberOfWindow;
+    private double waitingTimeStart;
+    private double servingTimeStart;
 
-    public Customer() {
+    public Customer()
+    {
         this.id = idCounter.getAndIncrement();
         isInWindow = false;
-    }
-
-    public static AtomicLong getIdCounter()
-    {
-        return idCounter;
-    }
-
-    public static void setIdCounter(AtomicLong idCounter)
-    {
-        Customer.idCounter = idCounter;
     }
 
     public long getId()
     {
         return id;
-    }
-
-    public void setId(long id)
-    {
-        this.id = id;
     }
 
     public boolean isIfCustomerCameOut()

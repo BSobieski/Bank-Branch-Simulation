@@ -3,11 +3,11 @@ package objects;
 public class Window
 {
 
-    boolean isAvaliable;
-    boolean isBroken;
-    CustomerQueue customerQueue;
-    CustomerQueue customerTechnicalQueue;
-    int id;
+    private boolean isAvaliable;
+    private boolean isBroken;
+    private CustomerQueue customerQueue;
+    private CustomerQueue customerTechnicalQueue;
+    private int id;
 
     public Window(int id, CustomerQueue customerQueue, CustomerQueue customerTechnicalQueue) {
         this.id = id;
@@ -32,19 +32,9 @@ public class Window
         return customerQueue;
     }
 
-    public void setCustomerQueue(CustomerQueue customerQueue)
-    {
-        this.customerQueue = customerQueue;
-    }
-
     public int getId()
     {
         return id;
-    }
-
-    public void setId(int id)
-    {
-        this.id = id;
     }
 
     public CustomerQueue getCustomerTechnicalQueue() {

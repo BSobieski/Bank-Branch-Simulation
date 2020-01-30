@@ -11,32 +11,31 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-public class Bank extends BasicSimObj {
+public class Bank extends BasicSimObj
+{
 
-    SimGenerator simGenerator = new SimGenerator();
-    Window[] windowsTab;
-    int lossOfCustomers;
-    Environment environment;
-    int maxLimitOfCustomers;
-    int currentNumberOfCustomers;
-    int impatientLoss = 0;
-    CustomerQueue customerQueue;
-    CustomerQueue customerTechnicalQueue;
-    LeavingTheWindow leavingTheWindowTab[];
-    SimManager simManager;
-    int logState;
-    PrintWriter printWriter;
-    MonitoredVar numberOfCustomersInQueue;
-    MonitoredVar numberOfCustomersInBankBranch;
-    MonitoredVar waitingTimeInQueue;
-    MonitoredVar servingTime;
+    private SimGenerator simGenerator = new SimGenerator();
+    private Window[] windowsTab;
+    private int lossOfCustomers;
+    private Environment environment;
+    private int maxLimitOfCustomers;
+    private int currentNumberOfCustomers;
+    private int impatientLoss = 0;
+    private CustomerQueue customerQueue;
+    private CustomerQueue customerTechnicalQueue;
+    private LeavingTheWindow[] leavingTheWindowTab;
+    private SimManager simManager;
+    private PrintWriter printWriter;
+    private MonitoredVar numberOfCustomersInQueue;
+    private MonitoredVar numberOfCustomersInBankBranch;
+    private MonitoredVar waitingTimeInQueue;
+    private MonitoredVar servingTime;
     private static final String FILE_PATH = "src/main/resources/log.txt";
 
 
-
-    public Bank(Environment environment, SimManager simManager) {
+    public Bank(Environment environment, SimManager simManager)
+    {
         this.simManager = simManager;
-        logState = 0;
         this.environment = environment;
         leavingTheWindowTab = new LeavingTheWindow[environment.numberOfWindows];
         this.maxLimitOfCustomers = environment.maxLimitOfCustomers;
@@ -44,13 +43,14 @@ public class Bank extends BasicSimObj {
         windowsTab = new Window[environment.numberOfWindows];
         customerQueue = new CustomerQueue(environment.queueMaxSize);
         customerTechnicalQueue = new CustomerQueue(environment.queueMaxSize);
-        for (int i = 0; i < windowsTab.length; i++) {
+        for (int i = 0; i < windowsTab.length; i++)
+        {
             windowsTab[i] = new Window(i, customerQueue, customerTechnicalQueue);
         }
-        numberOfCustomersInQueue = new MonitoredVar(0,simManager);
-        numberOfCustomersInBankBranch = new MonitoredVar(0,simManager);
-        waitingTimeInQueue = new MonitoredVar(0,simManager);
-        servingTime = new MonitoredVar(0,simManager);
+        numberOfCustomersInQueue = new MonitoredVar(0, simManager);
+        numberOfCustomersInBankBranch = new MonitoredVar(0, simManager);
+        waitingTimeInQueue = new MonitoredVar(0, simManager);
+        servingTime = new MonitoredVar(0, simManager);
         createNewFile();
         createNewWritter();
     }
@@ -61,19 +61,9 @@ public class Bank extends BasicSimObj {
         return simGenerator;
     }
 
-    public void setSimGenerator(SimGenerator simGenerator)
-    {
-        this.simGenerator = simGenerator;
-    }
-
     public Window[] getWindowsTab()
     {
         return windowsTab;
-    }
-
-    public void setWindowsTab(Window[] windowsTab)
-    {
-        this.windowsTab = windowsTab;
     }
 
     public int getLossOfCustomers()
@@ -91,19 +81,9 @@ public class Bank extends BasicSimObj {
         return environment;
     }
 
-    public void setEnvironment(Environment environment)
-    {
-        this.environment = environment;
-    }
-
     public int getMaxLimitOfCustomers()
     {
         return maxLimitOfCustomers;
-    }
-
-    public void setMaxLimitOfCustomers(int maxLimitOfCustomers)
-    {
-        this.maxLimitOfCustomers = maxLimitOfCustomers;
     }
 
     public int getCurrentNumberOfCustomers()
@@ -131,44 +111,41 @@ public class Bank extends BasicSimObj {
         return customerQueue;
     }
 
-    public void setCustomerQueue(CustomerQueue customerQueue)
-    {
-        this.customerQueue = customerQueue;
-    }
-
     public LeavingTheWindow[] getLeavingTheWindowTab()
     {
         return leavingTheWindowTab;
     }
 
-    public void setLeavingTheWindowTab(LeavingTheWindow[] leavingTheWindowTab)
+    public CustomerQueue getCustomerTechnicalQueue()
     {
-        this.leavingTheWindowTab = leavingTheWindowTab;
-    }
-
-    public CustomerQueue getCustomerTechnicalQueue() {
         return customerTechnicalQueue;
     }
 
-    public void appendTextToLogs(String message) {
+    public void appendTextToLogs(String message)
+    {
         printWriter.write(message + "\n");
         printWriter.flush();
         System.out.println(message);
     }
 
-    public SimManager getSimManager() {
+    public SimManager getSimManager()
+    {
         return simManager;
     }
 
     private void createNewFile()
     {
         File file = new File(FILE_PATH);
-        if (file.isFile()) {
+        if (file.isFile())
+        {
             System.out.println("File is already existing");
-        } else {
-            try {
+        } else
+        {
+            try
+            {
                 boolean b = file.createNewFile();
-            } catch (IOException e) {
+            } catch (IOException e)
+            {
                 System.out.println("Couldn't create file");
             }
         }
@@ -177,9 +154,11 @@ public class Bank extends BasicSimObj {
     private void createNewWritter()
     {
         printWriter = null;
-        try {
+        try
+        {
             printWriter = new PrintWriter(FILE_PATH);
-        } catch (FileNotFoundException e) {
+        } catch (FileNotFoundException e)
+        {
             e.printStackTrace();
         }
     }
@@ -208,7 +187,7 @@ public class Bank extends BasicSimObj {
     public int getKlienciWOkienkach()
     {
         int customersInWindows = 0;
-        for(Window i : windowsTab)
+        for (Window i : windowsTab)
         {
             if (!i.isAvaliable())
                 customersInWindows++;
