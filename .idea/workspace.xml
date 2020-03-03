@@ -1,58 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="initial commit">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/description.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/dissimlab2020.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GUI.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dissimlab2020.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/GUI/META-INF/GUI.kotlin_module" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/GUI/alert.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/GUI/app/Controller.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/GUI/app/Drawer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/GUI/app/Main.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/GUI/app/Simulation.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/GUI/app/layout.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/GUI/log.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/GUI/obiekty/Bank.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/GUI/obiekty/Klient.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/GUI/obiekty/Kolejka.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/GUI/obiekty/Okienko.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/GUI/obiekty/Otoczenie.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/GUI/resources/alert.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/GUI/resources/log.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/GUI/wydarzenia/AwariaOkienka.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/GUI/wydarzenia/NaprawaOkienka.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/GUI/wydarzenia/OpuszczenieOkienka.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/GUI/wydarzenia/PodejscieDoOkienka.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/GUI/wydarzenia/PrzybycieKlienta.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/GUI/wydarzenia/ZnieciepliwienieKlienta.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/Controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/Drawer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/Simulation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/layout.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/obiekty/Bank.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/obiekty/Klient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/obiekty/Kolejka.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/obiekty/Okienko.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/obiekty/Otoczenie.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/alert.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/log.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wydarzenia/AwariaOkienka.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wydarzenia/NaprawaOkienka.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wydarzenia/OpuszczenieOkienka.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wydarzenia/PodejscieDoOkienka.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wydarzenia/PrzybycieKlienta.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wydarzenia/ZnieciepliwienieKlienta.java" afterDir="false" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Refactor Drawer Class">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/layout.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/layout.fxml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -62,6 +13,20 @@
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="DebuggerManager">
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true" converted="true">
@@ -155,17 +120,22 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dynamic.classpath" value="false" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/demo" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Bartosz Sobieski\Desktop\PSY GUI\src\resources" />
-      <recent name="C:\Users\Bartosz Sobieski\Desktop\PSY GUI\src" />
-      <recent name="C:\Users\Bartosz Sobieski\Desktop\PSY GUI\src\java" />
+      <recent name="D:\Semestr 5\PSY Projekt Bank\src\main\resources" />
+      <recent name="D:\Semestr 5\PSY Projekt Bank\src\main\java\app" />
+      <recent name="D:\Semestr 5\PSY Projekt Bank\src\main" />
+      <recent name="D:\Semestr 5\PSY Projekt Bank\resources" />
+      <recent name="D:\Semestr 5\PSY Projekt Bank" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -293,7 +263,14 @@
       <workItem from="1579516902514" duration="1605000" />
       <workItem from="1580214144051" duration="364000" />
       <workItem from="1580214523151" duration="71000" />
-      <workItem from="1580214660905" duration="281000" />
+      <workItem from="1580214660905" duration="4942000" />
+      <workItem from="1580235319122" duration="4811000" />
+      <workItem from="1580249660587" duration="1481000" />
+      <workItem from="1580417210209" duration="2305000" />
+      <workItem from="1580648011188" duration="35000" />
+      <workItem from="1583263612049" duration="8120000" />
+      <workItem from="1583276412660" duration="46000" />
+      <workItem from="1583276607002" duration="242000" />
     </task>
     <task id="LOCAL-00001" summary="Basic UI and drawer">
       <created>1579364378682</created>
@@ -330,7 +307,56 @@
       <option name="project" value="LOCAL" />
       <updated>1579376283893</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="initial commit">
+      <created>1580214985461</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1580214985461</updated>
+    </task>
+    <task id="LOCAL-00007" summary="initial commit">
+      <created>1580215206508</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1580215206508</updated>
+    </task>
+    <task id="LOCAL-00008" summary="class and package names refactor">
+      <created>1580216671709</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1580216671709</updated>
+    </task>
+    <task id="LOCAL-00009" summary="variables refactor at objects package">
+      <created>1580250028462</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1580250028462</updated>
+    </task>
+    <task id="LOCAL-00010" summary="encapsulating object's classes (excepr Enviorment)">
+      <created>1580421870202</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1580421870202</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Changing language">
+      <created>1583268405302</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1583268405302</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Refactor Drawer Class">
+      <created>1583276436251</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1583276436251</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -357,7 +383,12 @@
     <MESSAGE value="Final" />
     <MESSAGE value="ulepszonko" />
     <MESSAGE value="initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
+    <MESSAGE value="class and package names refactor" />
+    <MESSAGE value="variables refactor at objects package" />
+    <MESSAGE value="encapsulating object's classes (excepr Enviorment)" />
+    <MESSAGE value="Changing language" />
+    <MESSAGE value="Refactor Drawer Class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor Drawer Class" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="70" key="#Plugins" />
