@@ -20,7 +20,7 @@
     <AnchorPane fx:id="supportPane" prefHeight="800.0" prefWidth="329.0" AnchorPane.bottomAnchor="0.0"
                 AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
         <Button fx:id="stopButton" layoutX="176.0" layoutY="743.0" mnemonicParsing="false"
-                onAction="#pauseSimulation" prefHeight="31.0" prefWidth="134.0" text="Zatrzymaj/Wznów"/>
+                onAction="#pauseSimulation" prefHeight="31.0" prefWidth="134.0" text="Pause/Resume"/>
         <Slider fx:id="sliderSpeed" blockIncrement="0.1" layoutY="158.0" majorTickUnit="0.5" max="4.0"
                 minorTickCount="1" prefHeight="18.0" prefWidth="331.0" showTickLabels="true" showTickMarks="true"
                 value="0.5" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="158.0">
@@ -28,7 +28,7 @@
                 <Insets left="20.0" right="20.0"/>
             </padding>
         </Slider>
-        <Label layoutX="-2.0" layoutY="135.0" text="Szybkość symulacji" AnchorPane.leftAnchor="-2.0"
+        <Label layoutX="-2.0" layoutY="135.0" text="Simulation speed" AnchorPane.leftAnchor="-2.0"
                AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="135.0">
             <padding>
                 <Insets left="20.0"/>
@@ -38,7 +38,7 @@
                 showTickLabels="true" showTickMarks="true" value="70.0"/>
         <Button fx:id="startButton" layoutX="14.0" layoutY="743.0" mnemonicParsing="false"
                 onAction="#startSimulation" prefHeight="31.0" prefWidth="134.0" text="Start"/>
-        <Label layoutX="20.0" layoutY="205.0" prefHeight="17.0" prefWidth="313.0" text="Długość symulacji"/>
+        <Label layoutX="20.0" layoutY="205.0" prefHeight="17.0" prefWidth="313.0" text="Simulation length"/>
         <GridPane layoutX="22.0" layoutY="277.0" prefHeight="443.0" prefWidth="285.0" AnchorPane.leftAnchor="22.0">
             <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="206.0" minWidth="10.0" prefWidth="206.0"/>
@@ -57,17 +57,17 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
             </rowConstraints>
             <children>
-                <Label text="Długość obsługi w okienku"/>
-                <Label prefHeight="17.0" prefWidth="164.0" text="Współczynnik przyjść klientów"
+                <Label text="Window service length"/>
+                <Label prefHeight="17.0" prefWidth="164.0" text="Customer arrival ratio"
                        GridPane.rowIndex="1"/>
-                <Label text="Współczynnik awarii" GridPane.rowIndex="2"/>
-                <Label text="Współczynnik naprawy" GridPane.rowIndex="3"/>
-                <Label text="Współczynnik zniecierpliwienia" GridPane.rowIndex="4"/>
-                <Label text="Pojemnosc kolejki" GridPane.rowIndex="5"/>
-                <Label text="Limit klientów" GridPane.rowIndex="6"/>
-                <Label text="Ilość okienek" GridPane.rowIndex="7"/>
-                <Label text="Ilość priorytetów" GridPane.rowIndex="8"/>
-                <Label text="Długość obsługi" GridPane.rowIndex="9"/>
+                <Label text="Breakdown ratio" GridPane.rowIndex="2"/>
+                <Label text="Reparation ratio" GridPane.rowIndex="3"/>
+                <Label text="Impatience ratio" GridPane.rowIndex="4"/>
+                <Label text="Queue capacity" GridPane.rowIndex="5"/>
+                <Label text="Customer limit" GridPane.rowIndex="6"/>
+                <Label text="Number of windows" GridPane.rowIndex="7"/>
+                <Label text="Number of priorities" GridPane.rowIndex="8"/>
+                <Label text="Service length" GridPane.rowIndex="9"/>
                 <TextField fx:id="serviceValue" text="2" GridPane.columnIndex="1"/>
                 <TextField fx:id="customerArrivalValue" text="0.5" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
                 <TextField fx:id="breakdownValue" text="14" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
@@ -94,7 +94,7 @@
                 <TextField fx:id="numberOfWindowsValue" text="6" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
             </children>
         </GridPane>
-        <Label layoutX="19.0" layoutY="22.0" text="Projekt Symulacji Oddziału Banku">
+        <Label layoutX="19.0" layoutY="22.0" text="Bank Branch Simulation Project">
             <font>
                 <Font size="18.0"/>
             </font>
@@ -104,7 +104,7 @@
                 <Font size="17.0"/>
             </font>
         </Label>
-        <Label layoutX="20.0" layoutY="75.0" text="Grupa I7B3S1">
+        <Label layoutX="20.0" layoutY="75.0" text="Study Group - I7B3S1">
             <font>
                 <Font size="17.0"/>
             </font>
