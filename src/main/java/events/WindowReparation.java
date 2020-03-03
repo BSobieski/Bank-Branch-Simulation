@@ -17,7 +17,7 @@ public class WindowReparation extends BasicSimEvent<Bank, Object> {
     @Override
     protected void stateChange() throws SimControlException {
         Bank bank = getSimObj();
-        bank.appendTextToLogs(String.format("%.5f",simTime()) + " :###: Window nr " + okienko + " repaired");
+        bank.appendTextToLogs(String.format("%.5f", simTime()) + " :###: Window nr " + okienko + " repaired");
         bank.getWindowsTab()[okienko].setAvaliable(true);
         bank.getWindowsTab()[okienko].setBroken(false);
 

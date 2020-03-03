@@ -14,141 +14,45 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import objects.Bank;
 
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class Drawer extends Thread{
+public class Drawer extends Thread {
     private boolean draw = false;
     private Pane drawingPane;
     private Bank bank;
-    private static int okienkoWidth = 80;
-    private static int okienkoHeight = 30;
-    private static int koniecOkienekHeight = 0;
-    private static int klientRadius = 17;
-    private ArrayList<Color> colors;
+    private static final int windowWidth = 80;
+    private static final int windowHeight = 30;
+    private static final int startWindowX = 613;
+    private static final int startWindowY = 10;
+    private static final int customerCircleRadius = 17;
     private Slider slider;
-    private String iconPath = "alert.png";
 
-    public Drawer(Pane drawingPane, Bank bank, Slider slider) {
+    Drawer(Pane drawingPane, Bank bank, Slider slider) {
         this.slider = slider;
         this.drawingPane = drawingPane;
         this.bank = bank;
-        colors = new ArrayList<>();
+        ArrayList<Color> colors = new ArrayList<>();
 
         Random rand = new Random();
 
-        //Stworzenie tablicy kolorów dla oznaczenia priorytetow
-        for(int x = 0; x<=bank.getEnvironment().numberOfPriorities; x++) {
+        for (int x = 0; x <= bank.getEnvironment().numberOfPriorities; x++) {
             int r = rand.nextInt(256);
             int g = rand.nextInt(256);
             int b = rand.nextInt(256);
-            colors.add(Color.rgb(r,g,b));
+            colors.add(Color.rgb(r, g, b));
         }
     }
 
     @Override
     public void run() {
-        while(draw) {
+        while (draw) {
             Platform.runLater(() -> {
-                drawingPane.getChildren().clear();
-                bank.getSimManager().setSimTimeRatio(slider.getValue());
-                Rectangle poleTechniczne = new Rectangle(0, 0, 500, 250);
-                poleTechniczne.setFill(Paint.valueOf("#f05c15"));
-                Label podpisTechniczny = new Label("Kolejka Techniczna");
-                podpisTechniczny.setLayoutX(10);
-                podpisTechniczny.setLayoutY(225);
-                podpisTechniczny.setFont(new Font("Arial", 20));
-                //podpisTechniczny.setRotate(90);
-                podpisTechniczny.setTextFill(Paint.valueOf("#000000"));
-
-                Label podpisKolejki = new Label("Kolejka");
-                podpisKolejki.setLayoutX(10);
-                podpisKolejki.setLayoutY(775);
-                podpisKolejki.setFont(new Font("Arial", 20));
-                //podpisTechniczny.setRotate(90);
-                podpisKolejki.setTextFill(Paint.valueOf("#000000"));
-
-                Line line = new Line();
-                line.setStartX(500);
-                line.setStartY(0);
-                line.setEndX(500);
-                line.setEndY(800);
-                drawingPane.getChildren().add(podpisKolejki);
-                drawingPane.getChildren().add(poleTechniczne);
-                drawingPane.getChildren().add(podpisTechniczny);
-                drawingPane.getChildren().add(line);
-
-
-                //Rysowanie okienek
-                int currX = 873 - okienkoWidth - okienkoWidth -okienkoWidth - 20, currY = 10;
-                for (int x = 0; x < bank.getWindowsTab().length; x++) {
-                    if(currY + okienkoHeight > 800) {
-                        currX = 873 - okienkoWidth - 10;
-                        currY = 10;
-                    }
-                    Rectangle rectangle = new Rectangle(currX, currY, okienkoWidth, okienkoHeight);
-                    if(bank.getWindowsTab()[x].isBroken()) {
-                        //rectangle.setFill(Paint.valueOf("#9e0000"));
-                        try
-                        {
-                            drawAlertIcon(currX,currY);
-                        } catch (FileNotFoundException e)
-                        {
-                            e.printStackTrace();
-                        }
-                    }
-                    drawingPane.getChildren().add(rectangle);
-                    Label label = new Label("" + x);
-                    label.setLayoutX(currX + 35);
-                    label.setLayoutY(currY + 10);
-                    label.setFont(new Font("Arial", 15));
-                    label.setTextFill(Paint.valueOf("#ffffff"));
-                    drawingPane.getChildren().add(label);
-
-                    //Ryswoanie kilienta przy okienku
-                    if(!bank.getWindowsTab()[x].isAvaliable() && !bank.getWindowsTab()[x].isBroken()) {
-                        Circle circle = new Circle(currX - okienkoWidth*0.5 + 10, currY + klientRadius - 3, klientRadius);
-                        circle.setFill(Paint.valueOf("#03fc90"));
-                        circle.setStroke(Paint.valueOf("#000000"));
-                        drawingPane.getChildren().add(circle);
-                    }
-
-                    currY+=okienkoHeight*2;
-                }
-
-                koniecOkienekHeight = 30;
-
-                currX = 30;
-                currY = 30;
-                for (int x = 0; x < bank.getCustomerTechnicalQueue().getSize(); x++) {
-                    if (currX + klientRadius * 2 > 500) {
-                        currX = 30;
-                        currY += 50;
-                    }
-
-                    drawKlient(currX, currY, x);
-
-                    currX += 50;
-                }
-
-                currX = 30;
-                currY = 300;
-                //Rysowanie kolejki
-                for (int x = 0; x < bank.getCustomerQueue().getSize(); x++) {
-                    if (currX + klientRadius * 2 > 500) {
-                        currX = 30;
-                        currY += 50;
-                    }
-
-                    drawKlient(currX, currY, x);
-
-                    currX += 50;
-
-                }
-
+                recreatePane();
+                paintWindows();
+                paintTechnicalQueue();
+                paintQueue();
             });
-
             try {
                 Thread.sleep(1);
             } catch (InterruptedException e) {
@@ -157,8 +61,99 @@ public class Drawer extends Thread{
         }
     }
 
-    private void drawAlertIcon(int currX, int currY) throws FileNotFoundException
-    {
+    private void paintQueue() {
+        int currentX = 30;
+        int currentY = 300;
+        for (int i = 0; i < bank.getCustomerQueue().getSize(); i++) {
+            if (currentX + customerCircleRadius * 2 > 500) {
+                currentX = 30;
+                currentY += 50;
+            }
+            drawClient(currentX, currentY, i);
+            currentX += 50;
+        }
+    }
+
+    private void paintTechnicalQueue() {
+        int currentX = 30;
+        int currentY = 30;
+        for (int i = 0; i < bank.getCustomerTechnicalQueue().getSize(); i++) {
+            if (currentX + customerCircleRadius * 2 > 500) {
+                currentX = 30;
+                currentY += 50;
+            }
+            drawClient(currentX, currentY, i);
+            currentX += 50;
+        }
+    }
+
+    private void paintWindows() {
+        int currentX = startWindowX, currentY = startWindowY;
+        for (int i = 0; i < bank.getWindowsTab().length; i++) {
+            if (currentY + windowHeight > 800) {
+                currentX = 873 - windowWidth - 10;
+                currentY = 10;
+            }
+            Rectangle rectangle = new Rectangle(currentX, currentY, windowWidth, windowHeight);
+
+            if (bank.getWindowsTab()[i].isBroken()) {
+                drawAlertIcon(currentX, currentY);
+            }
+            drawingPane.getChildren().add(rectangle);
+
+            Label label = new Label("" + i);
+            label.setLayoutX(currentX + 35);
+            label.setLayoutY(currentY + 10);
+            label.setFont(new Font("Arial", 15));
+            label.setTextFill(Paint.valueOf("#ffffff"));
+            drawingPane.getChildren().add(label);
+
+            if (!bank.getWindowsTab()[i].isAvaliable() && !bank.getWindowsTab()[i].isBroken()) {
+                Circle circle = new Circle(currentX - windowWidth * 0.5 + 10, currentY + customerCircleRadius - 3, customerCircleRadius);
+                circle.setFill(Paint.valueOf("#03fc90"));
+                circle.setStroke(Paint.valueOf("#000000"));
+                drawingPane.getChildren().add(circle);
+            }
+            currentY += windowHeight * 2;
+        }
+    }
+
+    private void recreatePane() {
+        initPane();
+
+        Rectangle technicalField = createTechnicalField();
+        Label technicalLabel = createTechnicalLabel();
+        Label queueLabel = createQueueLabel();
+        Line borderLine = createBorderLine();
+
+        drawingPane.getChildren().add(queueLabel);
+        drawingPane.getChildren().add(technicalField);
+        drawingPane.getChildren().add(technicalLabel);
+        drawingPane.getChildren().add(borderLine);
+    }
+
+    private void initPane() {
+        drawingPane.getChildren().clear();
+        bank.getSimManager().setSimTimeRatio(slider.getValue());
+    }
+
+    private Rectangle createTechnicalField() {
+        Rectangle technicalField = new Rectangle(0, 0, 500, 250);
+        technicalField.setFill(Paint.valueOf("#f05c15"));
+        return technicalField;
+    }
+
+    private Line createBorderLine() {
+        Line borderLine = new Line();
+        borderLine.setStartX(500);
+        borderLine.setStartY(0);
+        borderLine.setEndX(500);
+        borderLine.setEndY(800);
+        return borderLine;
+    }
+
+    private void drawAlertIcon(int currX, int currY) {
+        String iconPath = "alert.png";
         Image image = new Image(iconPath);
         ImageView imageView = new ImageView();
         imageView.setImage(image);
@@ -169,35 +164,46 @@ public class Drawer extends Thread{
         drawingPane.getChildren().add(imageView);
     }
 
-    private void drawKlient(int currX, int currY, int x) {
-        Circle circle = new Circle(currX, currY, klientRadius);
+    private void drawClient(int currX, int currY, int x) {
+        Circle circle = new Circle(currX, currY, customerCircleRadius);
         circle.setFill(Paint.valueOf("#03fc90"));
         circle.setStroke(Paint.valueOf("#000000"));
         drawingPane.getChildren().add(circle);
 
         if (bank.getCustomerQueue().getSize() > x) {
-            int priorytet = bank.getCustomerQueue().at(x).getPriority();
-            Label label = new Label(String.valueOf(priorytet));
-            if (priorytet > 9)
-            {
-                label.setLayoutX(currX-8);
-                label.setLayoutY(currY-8);
-            }
-            else
-            {
-                label.setLayoutX(currX-4);
-                label.setLayoutY(currY-8);
+            int priority = bank.getCustomerQueue().at(x).getPriority();
+            Label label = new Label(String.valueOf(priority));
+            if (priority > 9) {
+                label.setLayoutX(currX - 8);
+                label.setLayoutY(currY - 8);
+            } else {
+                label.setLayoutX(currX - 4);
+                label.setLayoutY(currY - 8);
             }
             label.setFont(new Font("Arial", 15));
             drawingPane.getChildren().add(label);
         }
     }
 
-    public boolean isDraw() {
-        return draw;
+    void setDraw() {
+        this.draw = true;
     }
 
-    public void setDraw(boolean draw) {
-        this.draw = draw;
+    private Label createTechnicalLabel() {
+        Label technicalLabel = new Label("Technical Queue");
+        technicalLabel.setLayoutX(10);
+        technicalLabel.setLayoutY(225);
+        technicalLabel.setFont(new Font("Arial", 20));
+        technicalLabel.setTextFill(Paint.valueOf("#000000"));
+        return technicalLabel;
+    }
+
+    private Label createQueueLabel() {
+        Label queueLabel = new Label("Queue");
+        queueLabel.setLayoutX(10);
+        queueLabel.setLayoutY(775);
+        queueLabel.setFont(new Font("Arial", 20));
+        queueLabel.setTextFill(Paint.valueOf("#000000"));
+        return queueLabel;
     }
 }

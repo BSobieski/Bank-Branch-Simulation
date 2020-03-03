@@ -11,8 +11,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-public class Bank extends BasicSimObj
-{
+public class Bank extends BasicSimObj {
 
     private SimGenerator simGenerator = new SimGenerator();
     private Window[] windowsTab;
@@ -33,8 +32,7 @@ public class Bank extends BasicSimObj
     private static final String FILE_PATH = "src/main/resources/log.txt";
 
 
-    public Bank(Environment environment, SimManager simManager)
-    {
+    public Bank(Environment environment, SimManager simManager) {
         this.simManager = simManager;
         this.environment = environment;
         leavingTheWindowTab = new LeavingTheWindow[environment.numberOfWindows];
@@ -43,8 +41,7 @@ public class Bank extends BasicSimObj
         windowsTab = new Window[environment.numberOfWindows];
         customerQueue = new CustomerQueue(environment.queueMaxSize);
         customerTechnicalQueue = new CustomerQueue(environment.queueMaxSize);
-        for (int i = 0; i < windowsTab.length; i++)
-        {
+        for (int i = 0; i < windowsTab.length; i++) {
             windowsTab[i] = new Window(i, customerQueue, customerTechnicalQueue);
         }
         numberOfCustomersInQueue = new MonitoredVar(0, simManager);
@@ -56,139 +53,110 @@ public class Bank extends BasicSimObj
     }
 
 
-    public SimGenerator getSimGenerator()
-    {
+    public SimGenerator getSimGenerator() {
         return simGenerator;
     }
 
-    public Window[] getWindowsTab()
-    {
+    public Window[] getWindowsTab() {
         return windowsTab;
     }
 
-    public int getLossOfCustomers()
-    {
+    public int getLossOfCustomers() {
         return lossOfCustomers;
     }
 
-    public void setLossOfCustomers(int lossOfCustomers)
-    {
+    public void setLossOfCustomers(int lossOfCustomers) {
         this.lossOfCustomers = lossOfCustomers;
     }
 
-    public Environment getEnvironment()
-    {
+    public Environment getEnvironment() {
         return environment;
     }
 
-    public int getMaxLimitOfCustomers()
-    {
+    public int getMaxLimitOfCustomers() {
         return maxLimitOfCustomers;
     }
 
-    public int getCurrentNumberOfCustomers()
-    {
+    public int getCurrentNumberOfCustomers() {
         return currentNumberOfCustomers;
     }
 
-    public void setCurrentNumberOfCustomers(int currentNumberOfCustomers)
-    {
+    public void setCurrentNumberOfCustomers(int currentNumberOfCustomers) {
         this.currentNumberOfCustomers = currentNumberOfCustomers;
     }
 
-    public int getImpatientLoss()
-    {
+    public int getImpatientLoss() {
         return impatientLoss;
     }
 
-    public void setImpatientLoss(int impatientLoss)
-    {
+    public void setImpatientLoss(int impatientLoss) {
         this.impatientLoss = impatientLoss;
     }
 
-    public CustomerQueue getCustomerQueue()
-    {
+    public CustomerQueue getCustomerQueue() {
         return customerQueue;
     }
 
-    public LeavingTheWindow[] getLeavingTheWindowTab()
-    {
+    public LeavingTheWindow[] getLeavingTheWindowTab() {
         return leavingTheWindowTab;
     }
 
-    public CustomerQueue getCustomerTechnicalQueue()
-    {
+    public CustomerQueue getCustomerTechnicalQueue() {
         return customerTechnicalQueue;
     }
 
-    public void appendTextToLogs(String message)
-    {
+    public void appendTextToLogs(String message) {
         printWriter.write(message + "\n");
         printWriter.flush();
         System.out.println(message);
     }
 
-    public SimManager getSimManager()
-    {
+    public SimManager getSimManager() {
         return simManager;
     }
 
-    private void createNewFile()
-    {
+    private void createNewFile() {
         File file = new File(FILE_PATH);
-        if (file.isFile())
-        {
+        if (file.isFile()) {
             System.out.println("File is already existing");
-        } else
-        {
-            try
-            {
+        } else {
+            try {
                 file.createNewFile();
-            } catch (IOException e)
-            {
+            } catch (IOException e) {
                 System.out.println("Couldn't create file");
             }
         }
     }
 
-    private void createNewWritter()
-    {
+    private void createNewWritter() {
         printWriter = null;
-        try
-        {
+        try {
             printWriter = new PrintWriter(FILE_PATH);
-        } catch (FileNotFoundException e)
-        {
+        } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
     }
 
 
-    public MonitoredVar getNumberOfCustomersInQueue()
-    {
+    public MonitoredVar getNumberOfCustomersInQueue() {
         return numberOfCustomersInQueue;
     }
 
-    public MonitoredVar getNumberOfCustomersInBankBranch()
-    {
+    public MonitoredVar getNumberOfCustomersInBankBranch() {
         return numberOfCustomersInBankBranch;
     }
 
-    public MonitoredVar getWaitingTimeInQueue()
-    {
+    public MonitoredVar getWaitingTimeInQueue() {
         return waitingTimeInQueue;
     }
 
-    public MonitoredVar getServingTime()
-    {
+    public MonitoredVar getServingTime() {
         return servingTime;
     }
 
-    public int getKlienciWOkienkach()
-    {
+    public int getKlienciWOkienkach() {
         int customersInWindows = 0;
-        for (Window i : windowsTab)
-        {
+        for (Window i : windowsTab) {
             if (!i.isAvaliable())
                 customersInWindows++;
         }

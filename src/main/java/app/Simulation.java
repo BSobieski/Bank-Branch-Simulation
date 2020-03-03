@@ -24,19 +24,19 @@ public class Simulation extends Thread {
         simManager.setEndSimTime(100);
         simManager.setSimTimeRatio(2);
         SimManager.simMode = SimParameters.SimMode.ASTRONOMICAL;
-        Environment environment = new Environment(windowServingTimeDelay,customerArrivalTimeDelay,breakdownTimeDelay,reparationTimeDelay,impatienceTimeDelay,
-                queueMaxSize,maxLimitOfCustomers,numberOfWindows,numberOfPriorities,servingTime);
+        Environment environment = new Environment(windowServingTimeDelay, customerArrivalTimeDelay, breakdownTimeDelay, reparationTimeDelay, impatienceTimeDelay,
+                queueMaxSize, maxLimitOfCustomers, numberOfWindows, numberOfPriorities, servingTime);
         bank = new Bank(environment, simManager);
 
-        for(int i = 0; i<bank.getWindowsTab().length; i++){
+        for (int i = 0; i < bank.getWindowsTab().length; i++) {
             try {
-                new WindowBreakdown(bank,i,bank.getEnvironment().breakdownTimeDelay +i);
+                new WindowBreakdown(bank, i, bank.getEnvironment().breakdownTimeDelay + i);
             } catch (SimControlException e) {
                 e.printStackTrace();
             }
         }
         try {
-            new CustomerArrival(bank,null,0);
+            new CustomerArrival(bank, null, 0);
         } catch (SimControlException e) {
             e.printStackTrace();
         }
@@ -63,16 +63,13 @@ public class Simulation extends Thread {
         return simManager;
     }
 
-    private void unlockAll()
-    {
-        for (Control i : controlArrayList)
-        {
+    private void unlockAll() {
+        for (Control i : controlArrayList) {
             i.setDisable(false);
         }
     }
 
-    private void statistics()
-    {
+    private void statistics() {
         bank.appendTextToLogs("\n\n\t\t ---SUMMARY---");
         bank.appendTextToLogs("\nLoss of customers due to queue overflow");
         bank.appendTextToLogs(String.valueOf(bank.getLossOfCustomers() + 1));
@@ -87,7 +84,7 @@ public class Simulation extends Thread {
         bank.appendTextToLogs("\nExpected customer service time limit");
         bank.appendTextToLogs(String.valueOf(Statistics.arithmeticMean(bank.getServingTime())));
         bank.appendTextToLogs("\nLimit probability of resigning from customer service");
-        bank.appendTextToLogs(String.valueOf((double) bank.getImpatientLoss()/bank.getMaxLimitOfCustomers()));
+        bank.appendTextToLogs(String.valueOf((double) bank.getImpatientLoss() / bank.getMaxLimitOfCustomers()));
         bank.appendTextToLogs("\n\t\t ---END OF LOG---");
     }
 }

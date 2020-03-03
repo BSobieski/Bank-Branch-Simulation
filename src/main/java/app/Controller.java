@@ -9,8 +9,7 @@ import javafx.scene.layout.AnchorPane;
 import java.util.ArrayList;
 
 
-public class Controller
-{
+public class Controller {
     @FXML
     AnchorPane mainPane;
     @FXML
@@ -61,10 +60,8 @@ public class Controller
     private ArrayList<Control> controlArrayList = new ArrayList<>();
 
 
-    public void startSimulation()
-    {
-        if (!isSimulationActive)
-        {
+    public void startSimulation() {
+        if (!isSimulationActive) {
             getSimulationValues();
             simulation = new Simulation(service, customerArrival, breakdown, reparation, impatience, (int) maxSizeOfQueue,
                     (int) maxLimitOfClients, (int) numberOfWindows, (int) numberOfPriorities, (int) serviceLength, controlArrayList);
@@ -73,22 +70,20 @@ public class Controller
             drawer = new Drawer(visualizationPane, simulation.getBank(), sliderSpeed);
             drawer.setDaemon(true);
 
-            drawer.setDraw(true);
+            drawer.setDraw();
             drawer.start();
             simulation.start();
             isSimulationActive = true;
             simulation.getSimManager().setEndSimTime(sliderLength.getValue());
             sliderLength.setDisable(true);
             sliderSpeed.setDisable(true);
-        } else
-        {
+        } else {
             simulation.getSimManager().resumeSimulation();
         }
         startButton.setDisable(true);
     }
 
-    private void getSimulationValues()
-    {
+    private void getSimulationValues() {
         service = (getValueFromTextField(serviceValue) == -9.999 ? 2.0 : getValueFromTextField(serviceValue));
         serviceValue.setDisable(true);
         customerArrival = (getValueFromTextField(customerArrivalValue) == -9.999 ? 1 : getValueFromTextField(customerArrivalValue));
@@ -125,27 +120,20 @@ public class Controller
         controlArrayList.add(startButton);
     }
 
-    private double getValueFromTextField(TextField textField)
-    {
+    private double getValueFromTextField(TextField textField) {
         double value;
-        try
-        {
+        try {
             value = Double.parseDouble(textField.getText());
-        } catch (NumberFormatException e)
-        {
+        } catch (NumberFormatException e) {
             return -9.999;
         }
         return value;
     }
 
-    public void pauseSimulation()
-    {
-        if (SimManager.controlState != SimParameters.SimProcessStatus.PAUSED)
-        {
+    public void pauseSimulation() {
+        if (SimManager.controlState != SimParameters.SimProcessStatus.PAUSED) {
             simulation.getSimManager().pauseSimulation();
-        }
-        else
-        {
+        } else {
             simulation.getSimManager().resumeSimulation();
         }
     }

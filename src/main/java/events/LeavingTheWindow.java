@@ -20,17 +20,15 @@ public class LeavingTheWindow extends BasicSimEvent<Bank, Object> {
     @Override
     protected void stateChange() throws SimControlException {
         bank = getSimObj();
-        bank.appendTextToLogs(String.format("%.5f",simTime()) + " :: Customer nr " + customer.getId() + " is leaving window nr " + window.getId());
+        bank.appendTextToLogs(String.format("%.5f", simTime()) + " :: Customer nr " + customer.getId() + " is leaving window nr " + window.getId());
         bank.getServingTime().setValue(simTime() - customer.getServingTimeStart());
 
         customer.setInWindow(false);
 
         if (Math.abs(bank.getSimGenerator().nextInt()) % 10 == 0) {
-            bank.appendTextToLogs(String.format("%.5f",simTime()) + " :|||: Customer nr " + customer.getId() + " returns to queue");
+            bank.appendTextToLogs(String.format("%.5f", simTime()) + " :|||: Customer nr " + customer.getId() + " returns to queue");
             new CustomerArrival(bank, customer, 0);
-        }
-        else
-        {
+        } else {
             bank.getNumberOfCustomersInBankBranch().setValue(bank.getKlienciWOkienkach() + bank.getCustomerQueue().getSize() + bank.getCustomerTechnicalQueue().getSize());
             customer.setIfCustomerCameOut(true);
         }

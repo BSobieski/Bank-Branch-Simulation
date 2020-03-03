@@ -6,27 +6,22 @@ import objects.Bank;
 import objects.Customer;
 import objects.Window;
 
-public class CustomerArrival extends BasicSimEvent<Bank, Object>
-{
+public class CustomerArrival extends BasicSimEvent<Bank, Object> {
     private Customer customer;
 
-    public CustomerArrival(Bank entity, Customer customer, double delay) throws SimControlException
-    {
+    public CustomerArrival(Bank entity, Customer customer, double delay) throws SimControlException {
         super(entity, delay);
         this.customer = customer;
     }
 
-    protected void stateChange() throws SimControlException
-    {
+    protected void stateChange() throws SimControlException {
         Bank bank = getSimObj();
         boolean staryKlient = false;
-        if (customer == null)
-        {
+        if (customer == null) {
             customer = new Customer();
             new ImpatienceOfTheCustomer(bank, bank.getSimGenerator().exponential(bank.getEnvironment().impatienceTimeDelay), customer);
             customer.setPriority(Math.abs(bank.getSimGenerator().nextInt()) % bank.getEnvironment().numberOfPriorities + 1);
-        } else
-        {
+        } else {
             staryKlient = true;
         }
 
@@ -40,15 +35,13 @@ public class CustomerArrival extends BasicSimEvent<Bank, Object>
         boolean wszedl = bank.getCustomerQueue().addClient(customer);
 
 
-        if (!wszedl)
-        {
+        if (!wszedl) {
             bank.setLossOfCustomers(bank.getLossOfCustomers() + 1);
             bank.appendTextToLogs(String.format("%.5f", simTime()) + " :$$$: Customer nr " + customer.getId()
                     + "arrived. No room in queue - lost counted. Actual lost: " + bank.getLossOfCustomers());
 
             customer.setIfCustomerCameOut(true);
-        } else
-        {
+        } else {
             bank.appendTextToLogs(String.format("%.5f", simTime()) + " :: Customer nr " + customer.getId() + " arrived with priority " + customer.getPriority()
                     + " - customer added to queue. Actual size of queue: " + bank.getCustomerQueue().getSize());
             bank.getNumberOfCustomersInQueue().setValue(bank.getCustomerQueue().getSize());
@@ -57,10 +50,8 @@ public class CustomerArrival extends BasicSimEvent<Bank, Object>
         }
 
 
-        for (Window window : bank.getWindowsTab())
-        {
-            if (window.getCustomerQueue().getSize() == 1 && window.isAvaliable())
-            {
+        for (Window window : bank.getWindowsTab()) {
+            if (window.getCustomerQueue().getSize() == 1 && window.isAvaliable()) {
                 ApproachToTheWindow approachToTheWindow = new ApproachToTheWindow(bank, window, 0);
                 approachToTheWindow.onTermination();
                 break;
@@ -68,10 +59,8 @@ public class CustomerArrival extends BasicSimEvent<Bank, Object>
         }
 
 
-        if (!staryKlient)
-        {
-            if (bank.getMaxLimitOfCustomers() > bank.getCurrentNumberOfCustomers())
-            {
+        if (!staryKlient) {
+            if (bank.getMaxLimitOfCustomers() > bank.getCurrentNumberOfCustomers()) {
                 double dt = bank.getSimGenerator().exponential(bank.getEnvironment().customerArrivalTimeDelay);
                 new CustomerArrival(bank, null, dt);
             }

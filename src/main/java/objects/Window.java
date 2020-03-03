@@ -1,7 +1,6 @@
 package objects;
 
-public class Window
-{
+public class Window {
 
     private boolean isAvaliable;
     private boolean isBroken;
@@ -17,23 +16,19 @@ public class Window
         isBroken = false;
     }
 
-    public boolean isAvaliable()
-    {
+    public boolean isAvaliable() {
         return isAvaliable;
     }
 
-    public void setAvaliable(boolean avaliable)
-    {
+    public void setAvaliable(boolean avaliable) {
         this.isAvaliable = avaliable;
     }
 
-    public CustomerQueue getCustomerQueue()
-    {
+    public CustomerQueue getCustomerQueue() {
         return customerQueue;
     }
 
-    public int getId()
-    {
+    public int getId() {
         return id;
     }
 

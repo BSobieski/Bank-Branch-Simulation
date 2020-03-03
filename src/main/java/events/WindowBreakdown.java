@@ -17,16 +17,16 @@ public class WindowBreakdown extends BasicSimEvent<Bank, Object> {
     @Override
     protected void stateChange() throws SimControlException {
         Bank bank = getSimObj();
-        bank.appendTextToLogs(String.format("%.5f",simTime()) + " :###: Window nr " + idOkienka + " breakdown");
+        bank.appendTextToLogs(String.format("%.5f", simTime()) + " :###: Window nr " + idOkienka + " breakdown");
         if (bank.getLeavingTheWindowTab()[idOkienka] != null) {
             bank.getLeavingTheWindowTab()[idOkienka].onInterruption();
-            if(!bank.getWindowsTab()[idOkienka].isAvaliable()) {
+            if (!bank.getWindowsTab()[idOkienka].isAvaliable()) {
                 Customer customer = bank.getLeavingTheWindowTab()[idOkienka].getCustomer();
                 bank.getLeavingTheWindowTab()[idOkienka].terminate();
                 customer.setPriority(0);
                 customer.setInWindow(false);
                 bank.getCustomerTechnicalQueue().addClient(customer);
-                bank.appendTextToLogs(String.format("%.5f",simTime()) + " :###: Customer nr " + customer.getId() + " redirected to technical queue" );
+                bank.appendTextToLogs(String.format("%.5f", simTime()) + " :###: Customer nr " + customer.getId() + " redirected to technical queue");
                 customer.setWaitingTimeStart(simTime());
             }
         }
