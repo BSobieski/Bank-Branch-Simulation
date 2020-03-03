@@ -7,18 +7,17 @@ import objects.Bank;
 public class WindowReparation extends BasicSimEvent<Bank, Object> {
 
 
-    int okienko;
+    private int okienko;
 
-    public WindowReparation(Bank entity, int okienko, double delay) throws SimControlException {
+    WindowReparation(Bank entity, int okienko, double delay) throws SimControlException {
         super(entity, delay);
         this.okienko = okienko;
     }
 
-    //todo okienko na okienko
     @Override
     protected void stateChange() throws SimControlException {
         Bank bank = getSimObj();
-        bank.appendTextToLogs(String.format("%.5f",simTime()) + " :###: Okienko nr " + okienko + " naprawione");
+        bank.appendTextToLogs(String.format("%.5f",simTime()) + " :###: Window nr " + okienko + " repaired");
         bank.getWindowsTab()[okienko].setAvaliable(true);
         bank.getWindowsTab()[okienko].setBroken(false);
 
@@ -34,12 +33,12 @@ public class WindowReparation extends BasicSimEvent<Bank, Object> {
 
 
     @Override
-    protected void onTermination() throws SimControlException {
+    protected void onTermination() {
 
     }
 
     @Override
-    protected void onInterruption() throws SimControlException {
+    protected void onInterruption() {
 
     }
 

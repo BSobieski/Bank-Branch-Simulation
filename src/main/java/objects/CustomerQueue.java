@@ -6,11 +6,11 @@ import java.util.LinkedList;
 public class CustomerQueue
 {
 
-    private LinkedList<Customer> customerLinkedList = new LinkedList<Customer>();
+    private LinkedList<Customer> customerLinkedList = new LinkedList<>();
 
     private int queueMaxSize;
 
-    public CustomerQueue(int queueMaxSize)
+    CustomerQueue(int queueMaxSize)
     {
         this.queueMaxSize = queueMaxSize;
     }

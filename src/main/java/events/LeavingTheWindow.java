@@ -11,7 +11,7 @@ public class LeavingTheWindow extends BasicSimEvent<Bank, Object> {
     private Window window;
     private Bank bank;
 
-    public LeavingTheWindow(Bank entity, Customer customer, Window window, double delay) throws SimControlException {
+    LeavingTheWindow(Bank entity, Customer customer, Window window, double delay) throws SimControlException {
         super(entity, delay);
         this.customer = customer;
         this.window = window;
@@ -20,13 +20,13 @@ public class LeavingTheWindow extends BasicSimEvent<Bank, Object> {
     @Override
     protected void stateChange() throws SimControlException {
         bank = getSimObj();
-        bank.appendTextToLogs(String.format("%.5f",simTime()) + " :: Klient " + customer.getId() + " opuszcza okienko " + window.getId());
+        bank.appendTextToLogs(String.format("%.5f",simTime()) + " :: Customer nr " + customer.getId() + " is leaving window nr " + window.getId());
         bank.getServingTime().setValue(simTime() - customer.getServingTimeStart());
 
         customer.setInWindow(false);
 
         if (Math.abs(bank.getSimGenerator().nextInt()) % 10 == 0) {
-            bank.appendTextToLogs(String.format("%.5f",simTime()) + " :|||: Klient " + customer.getId() + " powraca do kolejki");
+            bank.appendTextToLogs(String.format("%.5f",simTime()) + " :|||: Customer nr " + customer.getId() + " returns to queue");
             new CustomerArrival(bank, customer, 0);
         }
         else
@@ -53,11 +53,11 @@ public class LeavingTheWindow extends BasicSimEvent<Bank, Object> {
     }
 
     @Override
-    protected void onInterruption() throws SimControlException {
+    protected void onInterruption() {
 
     }
 
-    public Customer getCustomer() {
+    Customer getCustomer() {
         return customer;
     }
 }

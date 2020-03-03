@@ -13,19 +13,19 @@ import events.CustomerArrival;
 import java.util.ArrayList;
 
 public class Simulation extends Thread {
-    Bank bank;
-    SimManager simManager;
-    ArrayList<Control> controlArrayList;
+    private Bank bank;
+    private SimManager simManager;
+    private ArrayList<Control> controlArrayList;
 
-    public Simulation(double obsługaOkienka, double przyjscieKlienta, double awaria, double naprawa, double niecierpliwosc, int maxKolejka,
-                      int max_klientow, int ilosc_okienek, int ilosc_priorytetow, int dlugowsObslugi, ArrayList<Control> controlArrayList) {
+    Simulation(double windowServingTimeDelay, double customerArrivalTimeDelay, double breakdownTimeDelay, double reparationTimeDelay, double impatienceTimeDelay, int queueMaxSize,
+               int maxLimitOfCustomers, int numberOfWindows, int numberOfPriorities, int servingTime, ArrayList<Control> controlArrayList) {
         this.controlArrayList = controlArrayList;
         simManager = new SimManager();
         simManager.setEndSimTime(100);
         simManager.setSimTimeRatio(2);
         SimManager.simMode = SimParameters.SimMode.ASTRONOMICAL;
-        Environment environment = new Environment(obsługaOkienka,przyjscieKlienta,awaria,naprawa,niecierpliwosc,
-                maxKolejka,max_klientow,ilosc_okienek,ilosc_priorytetow,dlugowsObslugi);
+        Environment environment = new Environment(windowServingTimeDelay,customerArrivalTimeDelay,breakdownTimeDelay,reparationTimeDelay,impatienceTimeDelay,
+                queueMaxSize,maxLimitOfCustomers,numberOfWindows,numberOfPriorities,servingTime);
         bank = new Bank(environment, simManager);
 
         for(int i = 0; i<bank.getWindowsTab().length; i++){
@@ -44,14 +44,14 @@ public class Simulation extends Thread {
 
     @Override
     public void run() {
-        bank.appendTextToLogs("\t\t---START SYMULACJI---");
+        bank.appendTextToLogs("\t\t---START OF THE SIMULATION---");
         try {
             simManager.startSimulation();
         } catch (SimControlException e) {
             e.printStackTrace();
         }
         unlockAll();
-        Controller.symulacjaAktywna = false;
+        Controller.isSimulationActive = false;
         statistics();
     }
 
@@ -59,7 +59,7 @@ public class Simulation extends Thread {
         return bank;
     }
 
-    public SimManager getSimManager() {
+    SimManager getSimManager() {
         return simManager;
     }
 
@@ -73,20 +73,21 @@ public class Simulation extends Thread {
 
     private void statistics()
     {
-        bank.appendTextToLogs("\n\n\t\t ---PODSUMOWANIE---");
-        bank.appendTextToLogs("\nStrata klientow wynikajaca z przepelnienia kolejki");
+        bank.appendTextToLogs("\n\n\t\t ---SUMMARY---");
+        bank.appendTextToLogs("\nLoss of customers due to queue overflow");
         bank.appendTextToLogs(String.valueOf(bank.getLossOfCustomers() + 1));
-        bank.appendTextToLogs("\nStrata klientow wynikajaca ze zniecierpliwienia");
+        bank.appendTextToLogs("\nLoss of customers due to impatience");
         bank.appendTextToLogs(String.valueOf(bank.getImpatientLoss()));
-        bank.appendTextToLogs("\nOczekiwana graniczna liczbę klientów w oddziale");
+        bank.appendTextToLogs("\nExpected limit number of customers in the branch");
         bank.appendTextToLogs(String.valueOf(Statistics.arithmeticMean(bank.getNumberOfCustomersInBankBranch())));
-        bank.appendTextToLogs("\nOczekiwana graniczna liczbę klientów w kolejce");
+        bank.appendTextToLogs("\nExpected limit number of customers in the queue");
         bank.appendTextToLogs(String.valueOf(Statistics.arithmeticMean(bank.getNumberOfCustomersInQueue())));
-        bank.appendTextToLogs("\nOczekiwany graniczny czas oczekiwania klienta w kolejce na rozpoczęcie obsługi");
+        bank.appendTextToLogs("\nExpected limit time of queuing customer waiting to start service");
         bank.appendTextToLogs(String.valueOf(Statistics.arithmeticMean(bank.getWaitingTimeInQueue())));
-        bank.appendTextToLogs("\nOczekiwany graniczny czas obsługi klienta");
+        bank.appendTextToLogs("\nExpected customer service time limit");
         bank.appendTextToLogs(String.valueOf(Statistics.arithmeticMean(bank.getServingTime())));
-        bank.appendTextToLogs("\nGraniczne prawdopodobieństwo rezygnacji z obsługi przez klienta");
+        bank.appendTextToLogs("\nLimit probability of resigning from customer service");
         bank.appendTextToLogs(String.valueOf((double) bank.getImpatientLoss()/bank.getMaxLimitOfCustomers()));
+        bank.appendTextToLogs("\n\t\t ---END OF LOG---");
     }
 }

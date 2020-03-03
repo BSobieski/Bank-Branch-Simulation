@@ -6,9 +6,9 @@ import objects.Bank;
 import objects.Customer;
 
 public class ImpatienceOfTheCustomer extends BasicSimEvent<Bank, Customer> {
-    Customer customer;
+    private Customer customer;
 
-    public ImpatienceOfTheCustomer(Bank entity, double delay, Customer customer) throws SimControlException {
+    ImpatienceOfTheCustomer(Bank entity, double delay, Customer customer) throws SimControlException {
         super(entity, delay, customer);
         this.customer = customer;
     }
@@ -22,14 +22,14 @@ public class ImpatienceOfTheCustomer extends BasicSimEvent<Bank, Customer> {
         }
         bank.setImpatientLoss(bank.getImpatientLoss() + 1);
         if (customer.isInWindow()) {
-            bank.appendTextToLogs(String.format("%.5f",simTime()) + " :$$$: klient " + customer.getId() + " zniecierpliwil sie bedac w okienku " + customer.getNumberOfWindow() + ", obecna strata znicierpliwienia: " + bank.getImpatientLoss());
+            bank.appendTextToLogs(String.format("%.5f",simTime()) + " :$$$: Customer nr " + customer.getId() + " got impatient during service in window nr " + customer.getNumberOfWindow() + ", current impatient lost: " + bank.getImpatientLoss());
             bank.getWindowsTab()[customer.getNumberOfWindow()].setAvaliable(true);
             customer.setIfCustomerCameOut(true);
             bank.getLeavingTheWindowTab()[customer.getNumberOfWindow()].terminate();
             bank.getNumberOfCustomersInBankBranch().setValue(bank.getKlienciWOkienkach() + bank.getCustomerQueue().getSize() + bank.getCustomerTechnicalQueue().getSize());
         } else {
             bank.getCustomerQueue().remove(customer);
-            bank.appendTextToLogs(String.format("%.5f",simTime()) +" :$$$: klient " + customer.getId() + " zniecierpliwil sie bedac w kolejce, obecna strata znicierpliwienia: " + bank.getImpatientLoss());
+            bank.appendTextToLogs(String.format("%.5f",simTime()) +" :$$$: Customer nr " + customer.getId() + " got impatient during waiting in queue, current impatient lost: " + bank.getImpatientLoss());
             bank.getNumberOfCustomersInBankBranch().setValue(bank.getKlienciWOkienkach() + bank.getCustomerQueue().getSize() + bank.getCustomerTechnicalQueue().getSize());
             bank.getNumberOfCustomersInQueue().setValue(bank.getCustomerQueue().getSize());
         }
@@ -38,12 +38,12 @@ public class ImpatienceOfTheCustomer extends BasicSimEvent<Bank, Customer> {
     }
 
     @Override
-    protected void onTermination() throws SimControlException {
+    protected void onTermination() {
 
     }
 
     @Override
-    protected void onInterruption() throws SimControlException {
+    protected void onInterruption() {
 
     }
 }

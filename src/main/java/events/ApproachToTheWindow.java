@@ -11,7 +11,7 @@ public class ApproachToTheWindow extends BasicSimEvent<Bank, Object>
 
     private Window window;
 
-    public ApproachToTheWindow(Bank entity, Window window, double delay) throws SimControlException
+    ApproachToTheWindow(Bank entity, Window window, double delay) throws SimControlException
     {
         super(entity, delay);
         this.window = window;
@@ -22,18 +22,18 @@ public class ApproachToTheWindow extends BasicSimEvent<Bank, Object>
     {
         window.setAvaliable(false);
         Bank bank = getSimObj();
-        Customer customer = null;
+        Customer customer;
 
         if (window.getCustomerTechnicalQueue().getSize() > 0)
         {
             customer = window.getCustomerTechnicalQueue().getAndRemovePriorityFirst();
-            bank.appendTextToLogs(String.format("%.5f", simTime()) + " :###: Kolejka techniczna - Klient nr " + customer.getId() + " wszedł do okienka nr " + window.getId() + " aktualna wielkosc kolejki technicznej : " + bank.getCustomerTechnicalQueue().getSize());
+            bank.appendTextToLogs(String.format("%.5f", simTime()) + " :###: Technical Queue - Customer nr " + customer.getId() + " came to the window nr " + window.getId() + " actual size of technical queue : " + bank.getCustomerTechnicalQueue().getSize());
             bank.getWaitingTimeInQueue().setValue(simTime() - customer.getWaitingTimeStart());
             customer.setServingTimeStart(simTime());
         } else if (window.getCustomerQueue().getSize() > 0)
         {
             customer = window.getCustomerQueue().getAndRemovePriorityFirst();
-            bank.appendTextToLogs(String.format("%.5f", simTime()) + " :: Klient nr " + customer.getId() + " wszedł do okienka nr " + window.getId() + " aktualna wielkosc kolejki :" + bank.getCustomerQueue().getSize());
+            bank.appendTextToLogs(String.format("%.5f", simTime()) + " :: Customer nr " + customer.getId() + " came to the window nr " + window.getId() + " actual size of queue :" + bank.getCustomerQueue().getSize());
             bank.getNumberOfCustomersInQueue().setValue(bank.getCustomerQueue().getSize());
             bank.getWaitingTimeInQueue().setValue(simTime() - customer.getWaitingTimeStart());
             customer.setServingTimeStart(simTime());
@@ -51,15 +51,13 @@ public class ApproachToTheWindow extends BasicSimEvent<Bank, Object>
     }
 
     @Override
-    protected void onTermination() throws SimControlException
-    {
+    protected void onTermination() {
 
 
     }
 
     @Override
-    protected void onInterruption() throws SimControlException
-    {
+    protected void onInterruption() {
 
     }
 }

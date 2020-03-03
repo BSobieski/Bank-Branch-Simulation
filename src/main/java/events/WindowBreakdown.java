@@ -7,7 +7,7 @@ import objects.Customer;
 
 public class WindowBreakdown extends BasicSimEvent<Bank, Object> {
 
-    int idOkienka;
+    private int idOkienka;
 
     public WindowBreakdown(Bank entity, int idOkienka, double delay) throws SimControlException {
         super(entity, delay);
@@ -17,7 +17,7 @@ public class WindowBreakdown extends BasicSimEvent<Bank, Object> {
     @Override
     protected void stateChange() throws SimControlException {
         Bank bank = getSimObj();
-        bank.appendTextToLogs(String.format("%.5f",simTime()) + " :###: Awaria okienka nr " + idOkienka);
+        bank.appendTextToLogs(String.format("%.5f",simTime()) + " :###: Window nr " + idOkienka + " breakdown");
         if (bank.getLeavingTheWindowTab()[idOkienka] != null) {
             bank.getLeavingTheWindowTab()[idOkienka].onInterruption();
             if(!bank.getWindowsTab()[idOkienka].isAvaliable()) {
@@ -26,7 +26,7 @@ public class WindowBreakdown extends BasicSimEvent<Bank, Object> {
                 customer.setPriority(0);
                 customer.setInWindow(false);
                 bank.getCustomerTechnicalQueue().addClient(customer);
-                bank.appendTextToLogs(String.format("%.5f",simTime()) + " :###: klient " + customer.getId() + " przekierowany do kolejki technicznej" );
+                bank.appendTextToLogs(String.format("%.5f",simTime()) + " :###: Customer nr " + customer.getId() + " redirected to technical queue" );
                 customer.setWaitingTimeStart(simTime());
             }
         }
@@ -37,12 +37,12 @@ public class WindowBreakdown extends BasicSimEvent<Bank, Object> {
     }
 
     @Override
-    protected void onTermination() throws SimControlException {
+    protected void onTermination() {
 
     }
 
     @Override
-    protected void onInterruption() throws SimControlException {
+    protected void onInterruption() {
 
     }
 }

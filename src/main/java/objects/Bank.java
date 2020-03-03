@@ -143,7 +143,7 @@ public class Bank extends BasicSimObj
         {
             try
             {
-                boolean b = file.createNewFile();
+                file.createNewFile();
             } catch (IOException e)
             {
                 System.out.println("Couldn't create file");

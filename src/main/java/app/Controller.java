@@ -1,5 +1,6 @@
 package app;
 
+import dissimlab.simcore.SimManager;
 import dissimlab.simcore.SimParameters;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -23,102 +24,102 @@ public class Controller
     @FXML
     Slider sliderLength;
     @FXML
-    TextField obslugaValue;
+    TextField serviceValue;
     @FXML
-    TextField przyjscieKlientaValue;
+    TextField customerArrivalValue;
     @FXML
-    TextField awariaValue;
+    TextField breakdownValue;
     @FXML
-    TextField naprawaValue;
+    TextField reparationValue;
     @FXML
-    TextField zniecierpliwienieValue;
+    TextField impatienceValue;
     @FXML
-    TextField pojemnoscKolejkiValue;
+    TextField queueCapacityValue;
     @FXML
-    TextField limitKlientowValue;
+    TextField clientLimitValue;
     @FXML
-    TextField iloscOkienekValue;
+    TextField numberOfWindowsValue;
     @FXML
-    ChoiceBox<String> priorytetyValue;
+    ChoiceBox<String> prioritiesValue;
     @FXML
-    TextField dlugoscObslugiValue;
+    TextField serviceLengthValue;
 
 
-    private Simulation symulacja;
-    static boolean symulacjaAktywna = false;
+    private Simulation simulation;
+    static boolean isSimulationActive = false;
     private Drawer drawer;
-    private double obsluga;
-    private double przyjscieKlienta;
-    private double awaria;
-    private double naprawa;
-    private double niecierpliwosc;
-    private double maxKolejka;
-    private double maxKlientow;
-    private double iloscOkienek;
-    private double iloscPriorytetow;
-    private double dlugoscObslugi;
+    private double service;
+    private double customerArrival;
+    private double breakdown;
+    private double reparation;
+    private double impatience;
+    private double maxSizeOfQueue;
+    private double maxLimitOfClients;
+    private double numberOfWindows;
+    private double numberOfPriorities;
+    private double serviceLength;
     private ArrayList<Control> controlArrayList = new ArrayList<>();
 
 
     public void startSimulation()
     {
-        if (!symulacjaAktywna)
+        if (!isSimulationActive)
         {
             getSimulationValues();
-            symulacja = new Simulation(obsluga, przyjscieKlienta, awaria, naprawa, niecierpliwosc, (int) maxKolejka,
-                    (int) maxKlientow, (int) iloscOkienek, (int) iloscPriorytetow, (int) dlugoscObslugi, controlArrayList);
-            symulacja.setDaemon(true);
+            simulation = new Simulation(service, customerArrival, breakdown, reparation, impatience, (int) maxSizeOfQueue,
+                    (int) maxLimitOfClients, (int) numberOfWindows, (int) numberOfPriorities, (int) serviceLength, controlArrayList);
+            simulation.setDaemon(true);
 
-            drawer = new Drawer(visualizationPane, symulacja.getBank(), sliderSpeed);
+            drawer = new Drawer(visualizationPane, simulation.getBank(), sliderSpeed);
             drawer.setDaemon(true);
 
             drawer.setDraw(true);
             drawer.start();
-            symulacja.start();
-            symulacjaAktywna = true;
-            symulacja.getSimManager().setEndSimTime(sliderLength.getValue());
+            simulation.start();
+            isSimulationActive = true;
+            simulation.getSimManager().setEndSimTime(sliderLength.getValue());
             sliderLength.setDisable(true);
             sliderSpeed.setDisable(true);
         } else
         {
-            symulacja.getSimManager().resumeSimulation();
+            simulation.getSimManager().resumeSimulation();
         }
         startButton.setDisable(true);
     }
 
     private void getSimulationValues()
     {
-        obsluga = (getValueFromTextField(obslugaValue) == -9.999 ? 2.0 : getValueFromTextField(obslugaValue));
-        obslugaValue.setDisable(true);
-        przyjscieKlienta = (getValueFromTextField(przyjscieKlientaValue) == -9.999 ? 1 : getValueFromTextField(przyjscieKlientaValue));
-        przyjscieKlientaValue.setDisable(true);
-        awaria = (getValueFromTextField(awariaValue) == -9.999 ? 14 : getValueFromTextField(awariaValue));
-        awariaValue.setDisable(true);
-        naprawa = (getValueFromTextField(naprawaValue) == -9.999 ? 1 : getValueFromTextField(naprawaValue));
-        naprawaValue.setDisable(true);
-        niecierpliwosc = (getValueFromTextField(zniecierpliwienieValue) == -9.999 ? 20 : getValueFromTextField(zniecierpliwienieValue));
-        zniecierpliwienieValue.setDisable(true);
-        maxKolejka = (getValueFromTextField(pojemnoscKolejkiValue) == -9.999 ? 50 : getValueFromTextField(pojemnoscKolejkiValue));
-        pojemnoscKolejkiValue.setDisable(true);
-        maxKlientow = (getValueFromTextField(limitKlientowValue) == -9.999 ? 100 : getValueFromTextField(limitKlientowValue));
-        limitKlientowValue.setDisable(true);
-        iloscOkienek = (getValueFromTextField(iloscOkienekValue) == -9.999 ? 6 : getValueFromTextField(iloscOkienekValue));
-        iloscOkienekValue.setDisable(true);
-        iloscPriorytetow = Double.valueOf(priorytetyValue.getValue());
-        priorytetyValue.setDisable(true);
-        dlugoscObslugi = (getValueFromTextField(dlugoscObslugiValue) == -9.999 ? 2 : getValueFromTextField(dlugoscObslugiValue));
-        dlugoscObslugiValue.setDisable(true);
-        controlArrayList.add(dlugoscObslugiValue);
-        controlArrayList.add(obslugaValue);
-        controlArrayList.add(przyjscieKlientaValue);
-        controlArrayList.add(awariaValue);
-        controlArrayList.add(naprawaValue);
-        controlArrayList.add(zniecierpliwienieValue);
-        controlArrayList.add(pojemnoscKolejkiValue);
-        controlArrayList.add(limitKlientowValue);
-        controlArrayList.add(iloscOkienekValue);
-        controlArrayList.add(priorytetyValue);
-        controlArrayList.add(dlugoscObslugiValue);
+        service = (getValueFromTextField(serviceValue) == -9.999 ? 2.0 : getValueFromTextField(serviceValue));
+        serviceValue.setDisable(true);
+        customerArrival = (getValueFromTextField(customerArrivalValue) == -9.999 ? 1 : getValueFromTextField(customerArrivalValue));
+        customerArrivalValue.setDisable(true);
+        breakdown = (getValueFromTextField(breakdownValue) == -9.999 ? 14 : getValueFromTextField(breakdownValue));
+        breakdownValue.setDisable(true);
+        reparation = (getValueFromTextField(reparationValue) == -9.999 ? 1 : getValueFromTextField(reparationValue));
+        reparationValue.setDisable(true);
+        impatience = (getValueFromTextField(impatienceValue) == -9.999 ? 20 : getValueFromTextField(impatienceValue));
+        impatienceValue.setDisable(true);
+        maxSizeOfQueue = (getValueFromTextField(queueCapacityValue) == -9.999 ? 50 : getValueFromTextField(queueCapacityValue));
+        queueCapacityValue.setDisable(true);
+        maxLimitOfClients = (getValueFromTextField(clientLimitValue) == -9.999 ? 100 : getValueFromTextField(clientLimitValue));
+        clientLimitValue.setDisable(true);
+        numberOfWindows = (getValueFromTextField(numberOfWindowsValue) == -9.999 ? 6 : getValueFromTextField(numberOfWindowsValue));
+        numberOfWindowsValue.setDisable(true);
+        numberOfPriorities = Double.parseDouble(prioritiesValue.getValue());
+        prioritiesValue.setDisable(true);
+        serviceLength = (getValueFromTextField(serviceLengthValue) == -9.999 ? 2 : getValueFromTextField(serviceLengthValue));
+        serviceLengthValue.setDisable(true);
+        controlArrayList.add(serviceLengthValue);
+        controlArrayList.add(serviceValue);
+        controlArrayList.add(customerArrivalValue);
+        controlArrayList.add(breakdownValue);
+        controlArrayList.add(reparationValue);
+        controlArrayList.add(impatienceValue);
+        controlArrayList.add(queueCapacityValue);
+        controlArrayList.add(clientLimitValue);
+        controlArrayList.add(numberOfWindowsValue);
+        controlArrayList.add(prioritiesValue);
+        controlArrayList.add(serviceLengthValue);
         controlArrayList.add(sliderSpeed);
         controlArrayList.add(sliderLength);
         controlArrayList.add(startButton);
@@ -129,7 +130,7 @@ public class Controller
         double value;
         try
         {
-            value = Double.valueOf(textField.getText());
+            value = Double.parseDouble(textField.getText());
         } catch (NumberFormatException e)
         {
             return -9.999;
@@ -139,13 +140,13 @@ public class Controller
 
     public void pauseSimulation()
     {
-        if (symulacja.getSimManager().controlState != SimParameters.SimProcessStatus.PAUSED)
+        if (SimManager.controlState != SimParameters.SimProcessStatus.PAUSED)
         {
-            symulacja.getSimManager().pauseSimulation();
+            simulation.getSimManager().pauseSimulation();
         }
         else
         {
-            symulacja.getSimManager().resumeSimulation();
+            simulation.getSimManager().resumeSimulation();
         }
     }
 }

@@ -8,7 +8,7 @@ import objects.Window;
 
 public class CustomerArrival extends BasicSimEvent<Bank, Object>
 {
-    Customer customer;
+    private Customer customer;
 
     public CustomerArrival(Bank entity, Customer customer, double delay) throws SimControlException
     {
@@ -31,10 +31,10 @@ public class CustomerArrival extends BasicSimEvent<Bank, Object>
         }
 
         bank.setCurrentNumberOfCustomers(bank.getCurrentNumberOfCustomers() + 1);
-        if (bank.getCurrentNumberOfCustomers() == bank.getMaxLimitOfCustomers())
-        {
-           // bank.appendTextToLogs(String.format("%.5f", simTime()) + ":: -----Konczenie przybywania klientow - osiagnieto limit-----");
-        }
+//        if (bank.getCurrentNumberOfCustomers() == bank.getMaxLimitOfCustomers())
+//        {
+//           // bank.appendTextToLogs(String.format("%.5f", simTime()) + ":: -----Konczenie przybywania klientow - osiagnieto limit-----");
+//        }
 
 
         boolean wszedl = bank.getCustomerQueue().addClient(customer);
@@ -43,14 +43,14 @@ public class CustomerArrival extends BasicSimEvent<Bank, Object>
         if (!wszedl)
         {
             bank.setLossOfCustomers(bank.getLossOfCustomers() + 1);
-            bank.appendTextToLogs(String.format("%.5f", simTime()) + " :$$$: Przybyl klient nr " + customer.getId()
-                    + " brak miejsca w kolejce - strata naliczona. Aktualna strata: " + bank.getLossOfCustomers());
+            bank.appendTextToLogs(String.format("%.5f", simTime()) + " :$$$: Customer nr " + customer.getId()
+                    + "arrived. No room in queue - lost counted. Actual lost: " + bank.getLossOfCustomers());
 
             customer.setIfCustomerCameOut(true);
         } else
         {
-            bank.appendTextToLogs(String.format("%.5f", simTime()) + " :: Przybyl klient nr " + customer.getId() + " z priorytetem " + customer.getPriority()
-                    + " - klient dodany do kolejki. Aktualna wielkosc kolejki: " + bank.getCustomerQueue().getSize());
+            bank.appendTextToLogs(String.format("%.5f", simTime()) + " :: Customer nr " + customer.getId() + " arrived with priority " + customer.getPriority()
+                    + " - customer added to queue. Actual size of queue: " + bank.getCustomerQueue().getSize());
             bank.getNumberOfCustomersInQueue().setValue(bank.getCustomerQueue().getSize());
             bank.getNumberOfCustomersInBankBranch().setValue(bank.getKlienciWOkienkach() + bank.getCustomerQueue().getSize() + bank.getCustomerTechnicalQueue().getSize());
             customer.setWaitingTimeStart(simTime());
@@ -78,11 +78,9 @@ public class CustomerArrival extends BasicSimEvent<Bank, Object>
         }
     }
 
-    protected void onTermination() throws SimControlException
-    {
+    protected void onTermination() {
     }
 
-    protected void onInterruption() throws SimControlException
-    {
+    protected void onInterruption() {
     }
 }
