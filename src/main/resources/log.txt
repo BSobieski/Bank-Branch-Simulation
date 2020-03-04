@@ -1,401 +1,395 @@
 		---START OF THE SIMULATION---
-0,00000 :: Customer nr 0 arrived with priority 3 - customer added to queue. Actual size of queue: 1
+0,00000 :: Customer nr 0 arrived with priority 2 - customer added to queue. Actual size of queue: 1
 0,00000 :: Customer nr 0 came to the window nr 0 actual size of queue :0
-0,14758 :: Customer nr 1 arrived with priority 3 - customer added to queue. Actual size of queue: 1
-0,14758 :: Customer nr 1 came to the window nr 1 actual size of queue :0
-0,22225 :: Customer nr 2 arrived with priority 2 - customer added to queue. Actual size of queue: 1
-0,22225 :: Customer nr 2 came to the window nr 2 actual size of queue :0
-0,37927 :: Customer nr 3 arrived with priority 2 - customer added to queue. Actual size of queue: 1
-0,37927 :: Customer nr 3 came to the window nr 3 actual size of queue :0
-0,38593 :: Customer nr 2 is leaving window nr 2
-0,52321 :: Customer nr 0 is leaving window nr 0
-0,89496 :: Customer nr 3 is leaving window nr 3
-1,09376 :: Customer nr 4 arrived with priority 1 - customer added to queue. Actual size of queue: 1
-1,09376 :: Customer nr 4 came to the window nr 0 actual size of queue :0
-1,29374 :: Customer nr 5 arrived with priority 2 - customer added to queue. Actual size of queue: 1
-1,29374 :: Customer nr 5 came to the window nr 2 actual size of queue :0
-1,66285 :: Customer nr 6 arrived with priority 1 - customer added to queue. Actual size of queue: 1
-1,66285 :: Customer nr 6 came to the window nr 3 actual size of queue :0
-1,89448 :: Customer nr 4 is leaving window nr 0
-1,89909 :: Customer nr 5 is leaving window nr 2
-2,31059 :: Customer nr 1 is leaving window nr 1
-3,10195 :: Customer nr 7 arrived with priority 3 - customer added to queue. Actual size of queue: 1
-3,10195 :: Customer nr 7 came to the window nr 0 actual size of queue :0
-3,32152 :: Customer nr 8 arrived with priority 2 - customer added to queue. Actual size of queue: 1
-3,32152 :: Customer nr 8 came to the window nr 1 actual size of queue :0
-3,57421 :: Customer nr 9 arrived with priority 3 - customer added to queue. Actual size of queue: 1
-3,57421 :: Customer nr 9 came to the window nr 2 actual size of queue :0
-3,60823 :: Customer nr 10 arrived with priority 1 - customer added to queue. Actual size of queue: 1
-3,60823 :: Customer nr 10 came to the window nr 4 actual size of queue :0
-3,80194 :: Customer nr 11 arrived with priority 3 - customer added to queue. Actual size of queue: 1
-3,80194 :: Customer nr 11 came to the window nr 5 actual size of queue :0
-4,18706 :: Customer nr 12 arrived with priority 1 - customer added to queue. Actual size of queue: 1
-4,41580 :$$$: Customer nr 9 got impatient during service in window nr 2, current impatient lost: 1
-4,41580 :: Customer nr 12 came to the window nr 2 actual size of queue :0
-4,44930 :: Customer nr 13 arrived with priority 1 - customer added to queue. Actual size of queue: 1
-4,51513 :: Customer nr 12 is leaving window nr 2
-4,51513 :: Customer nr 13 came to the window nr 2 actual size of queue :0
-4,66885 :: Customer nr 14 arrived with priority 3 - customer added to queue. Actual size of queue: 1
-4,85201 :: Customer nr 7 is leaving window nr 0
-4,85201 :: Customer nr 14 came to the window nr 0 actual size of queue :0
-5,12645 :: Customer nr 6 is leaving window nr 3
-5,18408 :: Customer nr 15 arrived with priority 2 - customer added to queue. Actual size of queue: 1
-5,18408 :: Customer nr 15 came to the window nr 3 actual size of queue :0
-5,33712 :: Customer nr 16 arrived with priority 1 - customer added to queue. Actual size of queue: 1
-5,44698 :: Customer nr 17 arrived with priority 3 - customer added to queue. Actual size of queue: 2
-5,48749 :: Customer nr 18 arrived with priority 3 - customer added to queue. Actual size of queue: 3
-5,52806 :: Customer nr 8 is leaving window nr 1
-5,52806 :: Customer nr 16 came to the window nr 1 actual size of queue :2
-5,53370 :: Customer nr 14 is leaving window nr 0
-5,53370 :: Customer nr 17 came to the window nr 0 actual size of queue :1
-5,58357 :: Customer nr 11 is leaving window nr 5
-5,58357 :: Customer nr 18 came to the window nr 5 actual size of queue :0
-5,58619 :: Customer nr 16 is leaving window nr 1
-5,64644 :: Customer nr 15 is leaving window nr 3
-5,64644 :|||: Customer nr 15 returns to queue
-5,64644 :: Customer nr 15 arrived with priority 2 - customer added to queue. Actual size of queue: 1
-5,64644 :: Customer nr 15 came to the window nr 1 actual size of queue :0
-5,78415 :: Customer nr 10 is leaving window nr 4
-6,09403 :: Customer nr 19 arrived with priority 1 - customer added to queue. Actual size of queue: 1
-6,09403 :: Customer nr 19 came to the window nr 3 actual size of queue :0
-6,26001 :: Customer nr 20 arrived with priority 2 - customer added to queue. Actual size of queue: 1
-6,26001 :: Customer nr 20 came to the window nr 4 actual size of queue :0
-6,85238 :: Customer nr 13 is leaving window nr 2
-7,07589 :: Customer nr 18 is leaving window nr 5
-7,13894 :: Customer nr 20 is leaving window nr 4
-7,35268 :: Customer nr 17 is leaving window nr 0
-7,35268 :|||: Customer nr 17 returns to queue
-7,35268 :: Customer nr 17 arrived with priority 3 - customer added to queue. Actual size of queue: 1
-7,35268 :: Customer nr 17 came to the window nr 0 actual size of queue :0
-7,53949 :: Customer nr 15 is leaving window nr 1
-8,14106 :: Customer nr 17 is leaving window nr 0
-8,38009 :: Customer nr 21 arrived with priority 2 - customer added to queue. Actual size of queue: 1
-8,38009 :: Customer nr 21 came to the window nr 0 actual size of queue :0
-9,58932 :: Customer nr 22 arrived with priority 2 - customer added to queue. Actual size of queue: 1
-9,58932 :: Customer nr 22 came to the window nr 1 actual size of queue :0
-9,62179 :$$$: Customer nr 19 got impatient during service in window nr 3, current impatient lost: 2
-9,73973 :$$$: Customer nr 22 got impatient during service in window nr 1, current impatient lost: 3
-9,92449 :: Customer nr 23 arrived with priority 3 - customer added to queue. Actual size of queue: 1
-9,92449 :: Customer nr 23 came to the window nr 1 actual size of queue :0
-10,07265 :: Customer nr 21 is leaving window nr 0
-10,25380 :: Customer nr 23 is leaving window nr 1
-11,32769 :: Customer nr 24 arrived with priority 2 - customer added to queue. Actual size of queue: 1
-11,32769 :: Customer nr 24 came to the window nr 0 actual size of queue :0
-11,76135 :: Customer nr 25 arrived with priority 3 - customer added to queue. Actual size of queue: 1
-11,76135 :: Customer nr 25 came to the window nr 1 actual size of queue :0
-12,39662 :: Customer nr 26 arrived with priority 1 - customer added to queue. Actual size of queue: 1
-12,39662 :: Customer nr 26 came to the window nr 2 actual size of queue :0
-13,50608 :$$$: Customer nr 26 got impatient during service in window nr 2, current impatient lost: 4
-13,77099 :: Customer nr 27 arrived with priority 3 - customer added to queue. Actual size of queue: 1
-13,77099 :: Customer nr 27 came to the window nr 2 actual size of queue :0
-13,91732 :: Customer nr 24 is leaving window nr 0
+0,35068 :: Customer nr 0 is leaving window nr 0
+0,35068 :|||: Customer nr 0 returns to queue
+0,35068 :: Customer nr 0 arrived with priority 2 - customer added to queue. Actual size of queue: 1
+0,35068 :: Customer nr 0 came to the window nr 0 actual size of queue :0
+0,50538 :: Customer nr 1 arrived with priority 2 - customer added to queue. Actual size of queue: 1
+0,50538 :: Customer nr 1 came to the window nr 1 actual size of queue :0
+0,56576 :: Customer nr 2 arrived with priority 2 - customer added to queue. Actual size of queue: 1
+0,56576 :: Customer nr 2 came to the window nr 2 actual size of queue :0
+0,75422 :: Customer nr 1 is leaving window nr 1
+0,90679 :: Customer nr 3 arrived with priority 2 - customer added to queue. Actual size of queue: 1
+0,90679 :: Customer nr 3 came to the window nr 1 actual size of queue :0
+1,24018 :: Customer nr 4 arrived with priority 2 - customer added to queue. Actual size of queue: 1
+1,24018 :: Customer nr 4 came to the window nr 3 actual size of queue :0
+1,27258 :: Customer nr 0 is leaving window nr 0
+1,42342 :: Customer nr 3 is leaving window nr 1
+1,45012 :: Customer nr 5 arrived with priority 1 - customer added to queue. Actual size of queue: 1
+1,45012 :: Customer nr 5 came to the window nr 0 actual size of queue :0
+1,59382 :: Customer nr 6 arrived with priority 2 - customer added to queue. Actual size of queue: 1
+1,59382 :: Customer nr 6 came to the window nr 1 actual size of queue :0
+1,62460 :: Customer nr 7 arrived with priority 1 - customer added to queue. Actual size of queue: 1
+1,62460 :: Customer nr 7 came to the window nr 4 actual size of queue :0
+1,62701 :: Customer nr 8 arrived with priority 3 - customer added to queue. Actual size of queue: 1
+1,62701 :: Customer nr 8 came to the window nr 5 actual size of queue :0
+1,69994 :: Customer nr 4 is leaving window nr 3
+1,76315 :: Customer nr 9 arrived with priority 1 - customer added to queue. Actual size of queue: 1
+1,76315 :: Customer nr 9 came to the window nr 3 actual size of queue :0
+1,79503 :: Customer nr 7 is leaving window nr 4
+1,87273 :: Customer nr 10 arrived with priority 3 - customer added to queue. Actual size of queue: 1
+1,87273 :: Customer nr 10 came to the window nr 4 actual size of queue :0
+2,18011 :: Customer nr 11 arrived with priority 1 - customer added to queue. Actual size of queue: 1
+2,29373 :: Customer nr 6 is leaving window nr 1
+2,29373 :: Customer nr 11 came to the window nr 1 actual size of queue :0
+2,30958 :: Customer nr 2 is leaving window nr 2
+2,35385 :: Customer nr 5 is leaving window nr 0
+2,64203 :: Customer nr 11 is leaving window nr 1
+3,54045 :: Customer nr 8 is leaving window nr 5
+3,59181 :: Customer nr 12 arrived with priority 3 - customer added to queue. Actual size of queue: 1
+3,59181 :: Customer nr 12 came to the window nr 0 actual size of queue :0
+3,59233 :: Customer nr 13 arrived with priority 3 - customer added to queue. Actual size of queue: 1
+3,59233 :: Customer nr 13 came to the window nr 1 actual size of queue :0
+3,64720 :: Customer nr 14 arrived with priority 1 - customer added to queue. Actual size of queue: 1
+3,64720 :: Customer nr 14 came to the window nr 2 actual size of queue :0
+3,88404 :: Customer nr 10 is leaving window nr 4
+4,53637 :: Customer nr 15 arrived with priority 3 - customer added to queue. Actual size of queue: 1
+4,53637 :: Customer nr 15 came to the window nr 4 actual size of queue :0
+4,76869 :$$$: Customer nr 13 got impatient during service in window nr 1, current impatient lost: 1
+4,89310 :: Customer nr 16 arrived with priority 2 - customer added to queue. Actual size of queue: 1
+4,89310 :: Customer nr 16 came to the window nr 1 actual size of queue :0
+5,00257 :: Customer nr 17 arrived with priority 1 - customer added to queue. Actual size of queue: 1
+5,00257 :: Customer nr 17 came to the window nr 5 actual size of queue :0
+5,06054 :$$$: Customer nr 15 got impatient during service in window nr 4, current impatient lost: 2
+5,17661 :: Customer nr 18 arrived with priority 1 - customer added to queue. Actual size of queue: 1
+5,17661 :: Customer nr 18 came to the window nr 4 actual size of queue :0
+5,24049 :: Customer nr 19 arrived with priority 1 - customer added to queue. Actual size of queue: 1
+5,33475 :: Customer nr 9 is leaving window nr 3
+5,33475 :: Customer nr 19 came to the window nr 3 actual size of queue :0
+5,58215 :: Customer nr 20 arrived with priority 2 - customer added to queue. Actual size of queue: 1
+5,91282 :: Customer nr 21 arrived with priority 2 - customer added to queue. Actual size of queue: 2
+6,02395 :: Customer nr 17 is leaving window nr 5
+6,02395 :|||: Customer nr 17 returns to queue
+6,02395 :: Customer nr 17 arrived with priority 1 - customer added to queue. Actual size of queue: 3
+6,02395 :: Customer nr 17 came to the window nr 5 actual size of queue :2
+6,04457 :: Customer nr 22 arrived with priority 2 - customer added to queue. Actual size of queue: 3
+6,21803 :: Customer nr 23 arrived with priority 2 - customer added to queue. Actual size of queue: 4
+6,43830 :: Customer nr 18 is leaving window nr 4
+6,43830 :: Customer nr 20 came to the window nr 4 actual size of queue :3
+6,58109 :$$$: Customer nr 19 got impatient during service in window nr 3, current impatient lost: 3
+6,58109 :: Customer nr 21 came to the window nr 3 actual size of queue :2
+6,64739 :: Customer nr 20 is leaving window nr 4
+6,64739 :: Customer nr 22 came to the window nr 4 actual size of queue :1
+6,89566 :$$$: Customer nr 14 got impatient during service in window nr 2, current impatient lost: 4
+6,89566 :: Customer nr 23 came to the window nr 2 actual size of queue :0
+7,16936 :: Customer nr 21 is leaving window nr 3
+7,44463 :: Customer nr 24 arrived with priority 2 - customer added to queue. Actual size of queue: 1
+7,44463 :: Customer nr 24 came to the window nr 3 actual size of queue :0
+7,55406 :: Customer nr 25 arrived with priority 3 - customer added to queue. Actual size of queue: 1
+7,62269 :: Customer nr 26 arrived with priority 1 - customer added to queue. Actual size of queue: 2
+7,88649 :$$$: Customer nr 26 got impatient during waiting in queue, current impatient lost: 5
+8,69597 :: Customer nr 27 arrived with priority 2 - customer added to queue. Actual size of queue: 2
+8,99658 :: Customer nr 12 is leaving window nr 0
+8,99658 :|||: Customer nr 12 returns to queue
+8,99658 :: Customer nr 12 arrived with priority 3 - customer added to queue. Actual size of queue: 3
+8,99658 :: Customer nr 27 came to the window nr 0 actual size of queue :2
+9,17870 :: Customer nr 28 arrived with priority 3 - customer added to queue. Actual size of queue: 3
+9,20823 :: Customer nr 29 arrived with priority 1 - customer added to queue. Actual size of queue: 4
+10,51125 :: Customer nr 24 is leaving window nr 3
+10,51125 :: Customer nr 29 came to the window nr 3 actual size of queue :3
+10,68480 :: Customer nr 23 is leaving window nr 2
+10,68480 :|||: Customer nr 23 returns to queue
+10,68480 :: Customer nr 23 arrived with priority 2 - customer added to queue. Actual size of queue: 4
+10,68480 :: Customer nr 23 came to the window nr 2 actual size of queue :3
+10,77154 :: Customer nr 17 is leaving window nr 5
+10,77154 :: Customer nr 25 came to the window nr 5 actual size of queue :2
+10,78828 :: Customer nr 25 is leaving window nr 5
+10,78828 :: Customer nr 12 came to the window nr 5 actual size of queue :1
+10,99390 :: Customer nr 27 is leaving window nr 0
+10,99390 :: Customer nr 28 came to the window nr 0 actual size of queue :0
+11,14034 :: Customer nr 12 is leaving window nr 5
+11,16654 :: Customer nr 30 arrived with priority 1 - customer added to queue. Actual size of queue: 1
+11,16654 :: Customer nr 30 came to the window nr 5 actual size of queue :0
+11,70432 :: Customer nr 31 arrived with priority 2 - customer added to queue. Actual size of queue: 1
+11,73433 :: Customer nr 22 is leaving window nr 4
+11,73433 :: Customer nr 31 came to the window nr 4 actual size of queue :0
+11,74749 :: Customer nr 30 is leaving window nr 5
+11,88948 :: Customer nr 28 is leaving window nr 0
+12,16788 :: Customer nr 29 is leaving window nr 3
+12,23291 :: Customer nr 32 arrived with priority 1 - customer added to queue. Actual size of queue: 1
+12,23291 :: Customer nr 32 came to the window nr 0 actual size of queue :0
+12,28858 :: Customer nr 33 arrived with priority 1 - customer added to queue. Actual size of queue: 1
+12,28858 :: Customer nr 33 came to the window nr 3 actual size of queue :0
+12,48308 :: Customer nr 32 is leaving window nr 0
+12,58038 :: Customer nr 34 arrived with priority 1 - customer added to queue. Actual size of queue: 1
+12,58038 :: Customer nr 34 came to the window nr 0 actual size of queue :0
+12,77878 :: Customer nr 16 is leaving window nr 1
+12,81512 :: Customer nr 31 is leaving window nr 4
+12,85760 :: Customer nr 35 arrived with priority 2 - customer added to queue. Actual size of queue: 1
+12,85760 :: Customer nr 35 came to the window nr 1 actual size of queue :0
+12,91998 :: Customer nr 36 arrived with priority 1 - customer added to queue. Actual size of queue: 1
+12,91998 :: Customer nr 36 came to the window nr 4 actual size of queue :0
+12,99108 :: Customer nr 34 is leaving window nr 0
+13,22116 :: Customer nr 36 is leaving window nr 4
+13,22116 :|||: Customer nr 36 returns to queue
+13,22116 :: Customer nr 36 arrived with priority 1 - customer added to queue. Actual size of queue: 1
+13,22116 :: Customer nr 36 came to the window nr 0 actual size of queue :0
+13,31495 :: Customer nr 36 is leaving window nr 0
 14,00000 :###: Window nr 0 breakdown
-14,06751 :###: Window nr 0 repaired
-14,07609 :: Customer nr 28 arrived with priority 1 - customer added to queue. Actual size of queue: 1
-14,07609 :: Customer nr 28 came to the window nr 0 actual size of queue :0
-14,53525 :: Customer nr 29 arrived with priority 1 - customer added to queue. Actual size of queue: 1
-14,53525 :: Customer nr 29 came to the window nr 3 actual size of queue :0
-14,57129 :: Customer nr 28 is leaving window nr 0
+14,04506 :: Customer nr 37 arrived with priority 2 - customer added to queue. Actual size of queue: 1
+14,04506 :: Customer nr 37 came to the window nr 4 actual size of queue :0
+14,12018 :: Customer nr 23 is leaving window nr 2
+14,14316 :: Customer nr 38 arrived with priority 1 - customer added to queue. Actual size of queue: 1
+14,14316 :: Customer nr 38 came to the window nr 2 actual size of queue :0
+14,31468 :: Customer nr 39 arrived with priority 3 - customer added to queue. Actual size of queue: 1
+14,31468 :: Customer nr 39 came to the window nr 5 actual size of queue :0
+14,38500 :: Customer nr 40 arrived with priority 2 - customer added to queue. Actual size of queue: 1
+14,40655 :: Customer nr 41 arrived with priority 1 - customer added to queue. Actual size of queue: 2
+14,44623 :: Customer nr 38 is leaving window nr 2
+14,44623 :|||: Customer nr 38 returns to queue
+14,44623 :: Customer nr 38 arrived with priority 1 - customer added to queue. Actual size of queue: 3
+14,44623 :: Customer nr 41 came to the window nr 2 actual size of queue :2
 15,00000 :###: Window nr 1 breakdown
-15,00000 :###: Customer nr 25 redirected to technical queue
-15,18085 :: Customer nr 29 is leaving window nr 3
-15,18085 :###: Technical Queue - Customer nr 25 came to the window nr 3 actual size of technical queue : 0
-15,20162 :: Customer nr 30 arrived with priority 3 - customer added to queue. Actual size of queue: 1
-15,20162 :: Customer nr 30 came to the window nr 0 actual size of queue :0
-15,47375 :$$$: Customer nr 25 got impatient during service in window nr 3, current impatient lost: 5
-15,74931 :: Customer nr 31 arrived with priority 3 - customer added to queue. Actual size of queue: 1
-15,74931 :: Customer nr 31 came to the window nr 3 actual size of queue :0
-15,96162 :: Customer nr 27 is leaving window nr 2
+15,00000 :###: Customer nr 35 redirected to technical queue
+15,11774 :###: Window nr 0 repaired
+15,11774 :###: Technical Queue - Customer nr 35 came to the window nr 0 actual size of technical queue : 0
+15,34140 :: Customer nr 35 is leaving window nr 0
+15,34140 :: Customer nr 38 came to the window nr 0 actual size of queue :1
+15,56164 :###: Window nr 1 repaired
+15,56164 :: Customer nr 40 came to the window nr 1 actual size of queue :0
+15,65106 :: Customer nr 40 is leaving window nr 1
+15,75577 :: Customer nr 39 is leaving window nr 5
+15,84593 :: Customer nr 42 arrived with priority 3 - customer added to queue. Actual size of queue: 1
+15,84593 :: Customer nr 42 came to the window nr 1 actual size of queue :0
+15,93148 :: Customer nr 43 arrived with priority 3 - customer added to queue. Actual size of queue: 1
+15,93148 :: Customer nr 43 came to the window nr 5 actual size of queue :0
+15,99731 :: Customer nr 44 arrived with priority 3 - customer added to queue. Actual size of queue: 1
 16,00000 :###: Window nr 2 breakdown
-16,00432 :###: Window nr 1 repaired
-16,29773 :: Customer nr 30 is leaving window nr 0
-16,61323 :: Customer nr 32 arrived with priority 2 - customer added to queue. Actual size of queue: 1
-16,61323 :: Customer nr 32 came to the window nr 0 actual size of queue :0
-16,71809 :: Customer nr 33 arrived with priority 3 - customer added to queue. Actual size of queue: 1
-16,71809 :: Customer nr 33 came to the window nr 1 actual size of queue :0
-16,74026 :: Customer nr 34 arrived with priority 1 - customer added to queue. Actual size of queue: 1
-16,74026 :: Customer nr 34 came to the window nr 4 actual size of queue :0
+16,00000 :###: Customer nr 41 redirected to technical queue
+16,04923 :: Customer nr 45 arrived with priority 3 - customer added to queue. Actual size of queue: 2
+16,32348 :: Customer nr 33 is leaving window nr 3
+16,32348 :|||: Customer nr 33 returns to queue
+16,32348 :: Customer nr 33 arrived with priority 1 - customer added to queue. Actual size of queue: 3
+16,32348 :###: Technical Queue - Customer nr 41 came to the window nr 3 actual size of technical queue : 0
+16,38550 :: Customer nr 46 arrived with priority 3 - customer added to queue. Actual size of queue: 4
+16,61663 :###: Window nr 2 repaired
+16,61663 :: Customer nr 33 came to the window nr 2 actual size of queue :3
+16,86744 :: Customer nr 47 arrived with priority 3 - customer added to queue. Actual size of queue: 4
+16,88516 :: Customer nr 41 is leaving window nr 3
+16,88516 :: Customer nr 44 came to the window nr 3 actual size of queue :3
 17,00000 :###: Window nr 3 breakdown
-17,00000 :###: Customer nr 31 redirected to technical queue
-17,04112 :: Customer nr 35 arrived with priority 3 - customer added to queue. Actual size of queue: 1
-17,04112 :###: Technical Queue - Customer nr 31 came to the window nr 5 actual size of technical queue : 0
-17,04394 :: Customer nr 36 arrived with priority 2 - customer added to queue. Actual size of queue: 2
-17,07510 :###: Window nr 3 repaired
-17,07510 :: Customer nr 36 came to the window nr 3 actual size of queue :1
-17,11486 :$$$: Customer nr 33 got impatient during service in window nr 1, current impatient lost: 6
-17,11486 :: Customer nr 35 came to the window nr 1 actual size of queue :0
-17,17879 :: Customer nr 35 is leaving window nr 1
-17,37583 :: Customer nr 31 is leaving window nr 5
-17,39927 :###: Window nr 2 repaired
-17,64417 :: Customer nr 36 is leaving window nr 3
-17,89459 :: Customer nr 37 arrived with priority 3 - customer added to queue. Actual size of queue: 1
-17,89459 :: Customer nr 37 came to the window nr 1 actual size of queue :0
+17,00000 :###: Customer nr 44 redirected to technical queue
+17,00309 :: Customer nr 48 arrived with priority 1 - customer added to queue. Actual size of queue: 4
+17,34920 :: Customer nr 38 is leaving window nr 0
+17,34920 :|||: Customer nr 38 returns to queue
+17,34920 :: Customer nr 38 arrived with priority 1 - customer added to queue. Actual size of queue: 5
+17,34920 :###: Technical Queue - Customer nr 44 came to the window nr 0 actual size of technical queue : 0
+17,46303 :: Customer nr 49 arrived with priority 3 - customer added to queue. Actual size of queue: 6
+17,68227 :: Customer nr 43 is leaving window nr 5
+17,68227 :: Customer nr 48 came to the window nr 5 actual size of queue :5
 18,00000 :###: Window nr 4 breakdown
-18,00000 :###: Customer nr 34 redirected to technical queue
-18,04506 :: Customer nr 32 is leaving window nr 0
-18,04506 :###: Technical Queue - Customer nr 34 came to the window nr 0 actual size of technical queue : 0
-18,06203 :: Customer nr 37 is leaving window nr 1
-18,06203 :|||: Customer nr 37 returns to queue
-18,06203 :: Customer nr 37 arrived with priority 3 - customer added to queue. Actual size of queue: 1
-18,06203 :: Customer nr 37 came to the window nr 1 actual size of queue :0
-18,21643 :: Customer nr 38 arrived with priority 3 - customer added to queue. Actual size of queue: 1
-18,21643 :: Customer nr 38 came to the window nr 2 actual size of queue :0
-18,23365 :: Customer nr 38 is leaving window nr 2
-18,45371 :###: Window nr 4 repaired
-18,52384 :: Customer nr 37 is leaving window nr 1
+18,00000 :###: Customer nr 37 redirected to technical queue
+18,13545 :: Customer nr 50 arrived with priority 2 - customer added to queue. Actual size of queue: 6
+18,20855 :###: Window nr 4 repaired
+18,20855 :###: Technical Queue - Customer nr 37 came to the window nr 4 actual size of technical queue : 0
+18,31454 :$$$: Customer nr 33 got impatient during service in window nr 2, current impatient lost: 6
+18,31454 :: Customer nr 38 came to the window nr 2 actual size of queue :5
+18,44656 :: Customer nr 44 is leaving window nr 0
+18,44656 :: Customer nr 50 came to the window nr 0 actual size of queue :4
+18,48408 :: Customer nr 51 arrived with priority 3 - customer added to queue. Actual size of queue: 5
+18,85591 :: Customer nr 52 arrived with priority 2 - customer added to queue. Actual size of queue: 6
+18,89469 :: Customer nr 42 is leaving window nr 1
+18,89469 :|||: Customer nr 42 returns to queue
+18,89469 :: Customer nr 42 arrived with priority 3 - customer added to queue. Actual size of queue: 7
+18,89469 :: Customer nr 52 came to the window nr 1 actual size of queue :6
+18,97418 :: Customer nr 38 is leaving window nr 2
+18,97418 :: Customer nr 45 came to the window nr 2 actual size of queue :5
 19,00000 :###: Window nr 5 breakdown
-19,05755 :: Customer nr 39 arrived with priority 2 - customer added to queue. Actual size of queue: 1
-19,05755 :: Customer nr 39 came to the window nr 1 actual size of queue :0
-19,30469 :: Customer nr 40 arrived with priority 3 - customer added to queue. Actual size of queue: 1
-19,30469 :: Customer nr 40 came to the window nr 2 actual size of queue :0
-19,45237 :: Customer nr 34 is leaving window nr 0
-19,47152 :: Customer nr 40 is leaving window nr 2
-19,47152 :|||: Customer nr 40 returns to queue
-19,47152 :: Customer nr 40 arrived with priority 3 - customer added to queue. Actual size of queue: 1
-19,47152 :: Customer nr 40 came to the window nr 0 actual size of queue :0
-19,47705 :###: Window nr 0 breakdown
-19,47705 :###: Customer nr 40 redirected to technical queue
-19,55680 :: Customer nr 41 arrived with priority 3 - customer added to queue. Actual size of queue: 1
-19,55680 :###: Technical Queue - Customer nr 40 came to the window nr 2 actual size of technical queue : 0
-19,74469 :: Customer nr 39 is leaving window nr 1
-19,74469 :: Customer nr 41 came to the window nr 1 actual size of queue :0
-19,82348 :###: Window nr 0 repaired
-20,05356 :###: Window nr 1 breakdown
-20,05356 :###: Customer nr 41 redirected to technical queue
-20,10170 :: Customer nr 40 is leaving window nr 2
-20,10170 :###: Technical Queue - Customer nr 41 came to the window nr 2 actual size of technical queue : 0
-20,32737 :###: Window nr 5 repaired
-20,62913 :: Customer nr 42 arrived with priority 3 - customer added to queue. Actual size of queue: 1
-20,62913 :: Customer nr 42 came to the window nr 0 actual size of queue :0
-20,66529 :: Customer nr 43 arrived with priority 3 - customer added to queue. Actual size of queue: 1
-20,66529 :: Customer nr 43 came to the window nr 3 actual size of queue :0
-20,74400 :: Customer nr 44 arrived with priority 1 - customer added to queue. Actual size of queue: 1
-20,74400 :: Customer nr 44 came to the window nr 4 actual size of queue :0
-20,84410 :: Customer nr 41 is leaving window nr 2
-21,04834 :: Customer nr 44 is leaving window nr 4
-21,09418 :: Customer nr 45 arrived with priority 3 - customer added to queue. Actual size of queue: 1
-21,09418 :: Customer nr 45 came to the window nr 2 actual size of queue :0
-21,25211 :: Customer nr 46 arrived with priority 2 - customer added to queue. Actual size of queue: 1
-21,25211 :: Customer nr 46 came to the window nr 4 actual size of queue :0
-21,55816 :###: Window nr 0 breakdown
-21,55816 :###: Customer nr 42 redirected to technical queue
-22,21855 :###: Window nr 1 repaired
-22,41786 :: Customer nr 46 is leaving window nr 4
-22,41786 :###: Technical Queue - Customer nr 42 came to the window nr 4 actual size of technical queue : 0
-22,64161 :: Customer nr 47 arrived with priority 1 - customer added to queue. Actual size of queue: 1
-22,64161 :: Customer nr 47 came to the window nr 1 actual size of queue :0
-22,72016 :: Customer nr 47 is leaving window nr 1
-22,81649 :###: Window nr 5 breakdown
-22,85191 :: Customer nr 48 arrived with priority 2 - customer added to queue. Actual size of queue: 1
-22,85191 :: Customer nr 48 came to the window nr 1 actual size of queue :0
-23,01357 :: Customer nr 49 arrived with priority 3 - customer added to queue. Actual size of queue: 1
-23,05873 :: Customer nr 42 is leaving window nr 4
-23,05873 :: Customer nr 49 came to the window nr 4 actual size of queue :0
-23,16699 :: Customer nr 48 is leaving window nr 1
-23,39534 :: Customer nr 50 arrived with priority 3 - customer added to queue. Actual size of queue: 1
-23,39534 :: Customer nr 50 came to the window nr 1 actual size of queue :0
-23,48168 :###: Window nr 5 repaired
-23,53562 :###: Window nr 0 repaired
-23,64564 :: Customer nr 50 is leaving window nr 1
-23,89162 :: Customer nr 51 arrived with priority 2 - customer added to queue. Actual size of queue: 1
-23,89162 :: Customer nr 51 came to the window nr 0 actual size of queue :0
-24,35511 :: Customer nr 52 arrived with priority 2 - customer added to queue. Actual size of queue: 1
-24,35511 :: Customer nr 52 came to the window nr 1 actual size of queue :0
-24,68995 :###: Window nr 1 breakdown
-24,68995 :###: Customer nr 52 redirected to technical queue
-25,02455 :: Customer nr 53 arrived with priority 3 - customer added to queue. Actual size of queue: 1
-25,02455 :###: Technical Queue - Customer nr 52 came to the window nr 5 actual size of technical queue : 0
-25,03130 :: Customer nr 52 is leaving window nr 5
-25,03130 :: Customer nr 53 came to the window nr 5 actual size of queue :0
-25,03251 :: Customer nr 49 is leaving window nr 4
-25,05743 :: Customer nr 54 arrived with priority 1 - customer added to queue. Actual size of queue: 1
-25,05743 :: Customer nr 54 came to the window nr 4 actual size of queue :0
-25,09745 :: Customer nr 45 is leaving window nr 2
-25,23336 :###: Window nr 1 repaired
-25,61172 :$$$: Customer nr 43 got impatient during service in window nr 3, current impatient lost: 7
-25,69015 :: Customer nr 55 arrived with priority 1 - customer added to queue. Actual size of queue: 1
-25,69015 :: Customer nr 55 came to the window nr 1 actual size of queue :0
-26,13783 :: Customer nr 56 arrived with priority 3 - customer added to queue. Actual size of queue: 1
-26,13783 :: Customer nr 56 came to the window nr 2 actual size of queue :0
-26,24383 :: Customer nr 53 is leaving window nr 5
-26,36960 :: Customer nr 55 is leaving window nr 1
-26,43707 :: Customer nr 57 arrived with priority 2 - customer added to queue. Actual size of queue: 1
-26,43707 :: Customer nr 57 came to the window nr 1 actual size of queue :0
-26,67868 :: Customer nr 58 arrived with priority 2 - customer added to queue. Actual size of queue: 1
-26,67868 :: Customer nr 58 came to the window nr 3 actual size of queue :0
-27,25498 :: Customer nr 54 is leaving window nr 4
-27,47269 :: Customer nr 59 arrived with priority 1 - customer added to queue. Actual size of queue: 1
-27,47269 :: Customer nr 59 came to the window nr 4 actual size of queue :0
-27,78532 :: Customer nr 57 is leaving window nr 1
-27,83980 :###: Window nr 5 breakdown
-27,87005 :###: Window nr 2 breakdown
-27,87005 :###: Customer nr 56 redirected to technical queue
-27,90280 :: Customer nr 60 arrived with priority 3 - customer added to queue. Actual size of queue: 1
-27,90280 :###: Technical Queue - Customer nr 56 came to the window nr 1 actual size of technical queue : 0
-28,09278 :: Customer nr 51 is leaving window nr 0
-28,09278 :: Customer nr 60 came to the window nr 0 actual size of queue :0
-28,16335 :###: Window nr 5 repaired
-28,44588 :: Customer nr 61 arrived with priority 3 - customer added to queue. Actual size of queue: 1
-28,44588 :: Customer nr 61 came to the window nr 5 actual size of queue :0
-28,64368 :: Customer nr 60 is leaving window nr 0
-28,92788 :: Customer nr 56 is leaving window nr 1
-28,92788 :|||: Customer nr 56 returns to queue
-28,92788 :: Customer nr 56 arrived with priority 0 - customer added to queue. Actual size of queue: 1
-28,92788 :: Customer nr 56 came to the window nr 0 actual size of queue :0
-28,99395 :###: Window nr 1 breakdown
-29,08983 :###: Window nr 1 repaired
-29,10969 :: Customer nr 58 is leaving window nr 3
-29,14965 :###: Window nr 2 repaired
-30,79839 :: Customer nr 62 arrived with priority 2 - customer added to queue. Actual size of queue: 1
-30,79839 :: Customer nr 62 came to the window nr 1 actual size of queue :0
-30,80311 :###: Window nr 3 breakdown
-30,86758 :: Customer nr 62 is leaving window nr 1
-30,94253 :$$$: Customer nr 56 got impatient during service in window nr 0, current impatient lost: 8
-30,97682 :: Customer nr 61 is leaving window nr 5
-31,16168 :###: Window nr 3 repaired
-31,21511 :: Customer nr 63 arrived with priority 1 - customer added to queue. Actual size of queue: 1
-31,21511 :: Customer nr 63 came to the window nr 0 actual size of queue :0
-31,30027 :: Customer nr 64 arrived with priority 1 - customer added to queue. Actual size of queue: 1
-31,30027 :: Customer nr 64 came to the window nr 1 actual size of queue :0
-31,38710 :: Customer nr 65 arrived with priority 1 - customer added to queue. Actual size of queue: 1
-31,38710 :: Customer nr 65 came to the window nr 2 actual size of queue :0
-31,54801 :: Customer nr 65 is leaving window nr 2
-31,67574 :: Customer nr 66 arrived with priority 1 - customer added to queue. Actual size of queue: 1
-31,67574 :: Customer nr 66 came to the window nr 2 actual size of queue :0
-31,81692 :: Customer nr 67 arrived with priority 2 - customer added to queue. Actual size of queue: 1
-31,81692 :: Customer nr 67 came to the window nr 3 actual size of queue :0
-32,66169 :: Customer nr 66 is leaving window nr 2
-32,75213 :: Customer nr 68 arrived with priority 2 - customer added to queue. Actual size of queue: 1
-32,75213 :: Customer nr 68 came to the window nr 2 actual size of queue :0
-32,82359 :: Customer nr 69 arrived with priority 2 - customer added to queue. Actual size of queue: 1
-32,82359 :: Customer nr 69 came to the window nr 5 actual size of queue :0
-33,02355 :: Customer nr 59 is leaving window nr 4
-33,35432 :: Customer nr 63 is leaving window nr 0
-33,63787 :: Customer nr 67 is leaving window nr 3
-33,80723 :: Customer nr 68 is leaving window nr 2
-33,97823 :: Customer nr 70 arrived with priority 2 - customer added to queue. Actual size of queue: 1
-33,97823 :: Customer nr 70 came to the window nr 0 actual size of queue :0
-34,03900 :: Customer nr 71 arrived with priority 1 - customer added to queue. Actual size of queue: 1
-34,03900 :: Customer nr 71 came to the window nr 2 actual size of queue :0
-34,14580 :: Customer nr 71 is leaving window nr 2
-34,14580 :|||: Customer nr 71 returns to queue
-34,14580 :: Customer nr 71 arrived with priority 1 - customer added to queue. Actual size of queue: 1
-34,14580 :: Customer nr 71 came to the window nr 2 actual size of queue :0
-34,27439 :: Customer nr 72 arrived with priority 2 - customer added to queue. Actual size of queue: 1
-34,27439 :: Customer nr 72 came to the window nr 3 actual size of queue :0
-34,29691 :###: Window nr 4 breakdown
-34,63699 :: Customer nr 64 is leaving window nr 1
-34,72054 :###: Window nr 4 repaired
-34,72138 :: Customer nr 69 is leaving window nr 5
-34,73634 :: Customer nr 73 arrived with priority 3 - customer added to queue. Actual size of queue: 1
-34,73634 :: Customer nr 73 came to the window nr 1 actual size of queue :0
-34,82849 :: Customer nr 71 is leaving window nr 2
-34,84340 :: Customer nr 74 arrived with priority 1 - customer added to queue. Actual size of queue: 1
-34,84340 :: Customer nr 74 came to the window nr 2 actual size of queue :0
-34,85320 :: Customer nr 75 arrived with priority 3 - customer added to queue. Actual size of queue: 1
-34,85320 :: Customer nr 75 came to the window nr 4 actual size of queue :0
-35,22654 :: Customer nr 75 is leaving window nr 4
-35,68180 :: Customer nr 76 arrived with priority 3 - customer added to queue. Actual size of queue: 1
-35,68180 :: Customer nr 76 came to the window nr 4 actual size of queue :0
-35,69081 :: Customer nr 77 arrived with priority 1 - customer added to queue. Actual size of queue: 1
-35,69081 :: Customer nr 77 came to the window nr 5 actual size of queue :0
-35,92234 :: Customer nr 78 arrived with priority 2 - customer added to queue. Actual size of queue: 1
-36,05206 :: Customer nr 70 is leaving window nr 0
-36,05206 :: Customer nr 78 came to the window nr 0 actual size of queue :0
-36,08058 :: Customer nr 73 is leaving window nr 1
-36,75100 :: Customer nr 77 is leaving window nr 5
-36,75100 :|||: Customer nr 77 returns to queue
-36,75100 :: Customer nr 77 arrived with priority 1 - customer added to queue. Actual size of queue: 1
-36,75100 :: Customer nr 77 came to the window nr 1 actual size of queue :0
-36,79031 :: Customer nr 79 arrived with priority 3 - customer added to queue. Actual size of queue: 1
-36,79031 :: Customer nr 79 came to the window nr 5 actual size of queue :0
-36,79914 :: Customer nr 80 arrived with priority 3 - customer added to queue. Actual size of queue: 1
-36,97267 :: Customer nr 81 arrived with priority 2 - customer added to queue. Actual size of queue: 2
-36,97362 :###: Window nr 2 breakdown
-36,97362 :###: Customer nr 74 redirected to technical queue
-37,00397 :$$$: Customer nr 78 got impatient during service in window nr 0, current impatient lost: 9
-37,00397 :###: Technical Queue - Customer nr 74 came to the window nr 0 actual size of technical queue : 0
-37,19426 :###: Window nr 3 breakdown
-37,19426 :###: Customer nr 72 redirected to technical queue
-37,26830 :###: Window nr 3 repaired
-37,26830 :###: Technical Queue - Customer nr 72 came to the window nr 3 actual size of technical queue : 0
-37,39964 :: Customer nr 82 arrived with priority 1 - customer added to queue. Actual size of queue: 3
-37,48244 :: Customer nr 83 arrived with priority 2 - customer added to queue. Actual size of queue: 4
-37,50505 :###: Window nr 2 repaired
-37,50505 :: Customer nr 82 came to the window nr 2 actual size of queue :3
-37,59130 :: Customer nr 77 is leaving window nr 1
-37,59130 :: Customer nr 81 came to the window nr 1 actual size of queue :2
-37,81232 :: Customer nr 72 is leaving window nr 3
-37,81232 :: Customer nr 83 came to the window nr 3 actual size of queue :1
-38,08999 :: Customer nr 81 is leaving window nr 1
-38,08999 :|||: Customer nr 81 returns to queue
-38,08999 :: Customer nr 81 arrived with priority 2 - customer added to queue. Actual size of queue: 2
-38,08999 :: Customer nr 81 came to the window nr 1 actual size of queue :1
-38,31927 :: Customer nr 84 arrived with priority 1 - customer added to queue. Actual size of queue: 2
-38,37633 :: Customer nr 85 arrived with priority 3 - customer added to queue. Actual size of queue: 3
-38,45093 :: Customer nr 86 arrived with priority 2 - customer added to queue. Actual size of queue: 4
-38,45267 :: Customer nr 74 is leaving window nr 0
-38,45267 :: Customer nr 84 came to the window nr 0 actual size of queue :3
-38,48857 :$$$: Customer nr 82 got impatient during service in window nr 2, current impatient lost: 10
-38,48857 :: Customer nr 86 came to the window nr 2 actual size of queue :2
-38,54356 :: Customer nr 87 arrived with priority 3 - customer added to queue. Actual size of queue: 3
-38,64065 :###: Window nr 2 breakdown
-38,64065 :###: Customer nr 86 redirected to technical queue
-38,73946 :: Customer nr 84 is leaving window nr 0
-38,73946 :###: Technical Queue - Customer nr 86 came to the window nr 0 actual size of technical queue : 0
-38,81459 :: Customer nr 81 is leaving window nr 1
-38,81459 :|||: Customer nr 81 returns to queue
-38,81459 :: Customer nr 81 arrived with priority 2 - customer added to queue. Actual size of queue: 4
-38,81459 :: Customer nr 81 came to the window nr 1 actual size of queue :3
-38,88741 :: Customer nr 76 is leaving window nr 4
-38,88741 :: Customer nr 80 came to the window nr 4 actual size of queue :2
-39,16488 :$$$: Customer nr 80 got impatient during service in window nr 4, current impatient lost: 11
-39,16488 :: Customer nr 85 came to the window nr 4 actual size of queue :1
-39,31185 :: Customer nr 81 is leaving window nr 1
-39,31185 :: Customer nr 87 came to the window nr 1 actual size of queue :0
-39,35766 :: Customer nr 85 is leaving window nr 4
-39,62540 :: Customer nr 87 is leaving window nr 1
-40,04493 :: Customer nr 88 arrived with priority 3 - customer added to queue. Actual size of queue: 1
-40,04493 :: Customer nr 88 came to the window nr 1 actual size of queue :0
-40,22773 :###: Window nr 2 repaired
-40,25703 :: Customer nr 88 is leaving window nr 1
-40,51942 :: Customer nr 89 arrived with priority 3 - customer added to queue. Actual size of queue: 1
-40,51942 :: Customer nr 89 came to the window nr 1 actual size of queue :0
-41,16948 :: Customer nr 83 is leaving window nr 3
-41,36087 :: Customer nr 79 is leaving window nr 5
-41,36087 :|||: Customer nr 79 returns to queue
-41,36087 :: Customer nr 79 arrived with priority 3 - customer added to queue. Actual size of queue: 1
-41,36087 :: Customer nr 79 came to the window nr 2 actual size of queue :0
-41,58812 :: Customer nr 90 arrived with priority 2 - customer added to queue. Actual size of queue: 1
-41,58812 :: Customer nr 90 came to the window nr 3 actual size of queue :0
-41,98356 :###: Window nr 3 breakdown
-41,98356 :###: Customer nr 90 redirected to technical queue
-42,37729 :: Customer nr 79 is leaving window nr 2
-42,37729 :|||: Customer nr 79 returns to queue
-42,37729 :: Customer nr 79 arrived with priority 3 - customer added to queue. Actual size of queue: 1
-42,37729 :###: Technical Queue - Customer nr 90 came to the window nr 2 actual size of technical queue : 0
-42,37729 :: Customer nr 79 came to the window nr 2 actual size of queue :0
-42,71007 :###: Window nr 2 breakdown
-42,71007 :###: Customer nr 79 redirected to technical queue
-42,74402 :: Customer nr 86 is leaving window nr 0
-42,74402 :###: Technical Queue - Customer nr 79 came to the window nr 0 actual size of technical queue : 0
-43,09459 :: Customer nr 89 is leaving window nr 1
-43,69488 :###: Window nr 1 breakdown
-43,77750 :###: Window nr 2 repaired
-43,85184 :###: Window nr 1 repaired
-44,03426 :: Customer nr 90 is leaving window nr 2
-44,03426 :|||: Customer nr 90 returns to queue
-44,03426 :: Customer nr 90 arrived with priority 0 - customer added to queue. Actual size of queue: 1
-44,03426 :: Customer nr 90 came to the window nr 1 actual size of queue :0
-44,22437 :###: Window nr 3 repaired
-44,63628 :: Customer nr 79 is leaving window nr 0
-46,92964 :: Customer nr 90 is leaving window nr 1
-48,94080 :###: Window nr 0 breakdown
-48,98603 :###: Window nr 0 repaired
-58,92867 :###: Window nr 5 breakdown
-62,41129 :###: Window nr 5 repaired
-66,89564 :###: Window nr 4 breakdown
-67,16663 :###: Window nr 4 repaired
+19,00000 :###: Customer nr 48 redirected to technical queue
+19,07230 :: Customer nr 53 arrived with priority 2 - customer added to queue. Actual size of queue: 6
+19,07569 :: Customer nr 37 is leaving window nr 4
+19,07569 :###: Technical Queue - Customer nr 48 came to the window nr 4 actual size of technical queue : 0
+19,33928 :: Customer nr 48 is leaving window nr 4
+19,33928 :|||: Customer nr 48 returns to queue
+19,33928 :: Customer nr 48 arrived with priority 0 - customer added to queue. Actual size of queue: 7
+19,33928 :: Customer nr 48 came to the window nr 4 actual size of queue :6
+19,42294 :: Customer nr 52 is leaving window nr 1
+19,42294 :: Customer nr 53 came to the window nr 1 actual size of queue :5
+19,71402 :: Customer nr 53 is leaving window nr 1
+19,71402 :: Customer nr 46 came to the window nr 1 actual size of queue :4
+19,81867 :$$$: Customer nr 50 got impatient during service in window nr 0, current impatient lost: 7
+19,81867 :: Customer nr 47 came to the window nr 0 actual size of queue :3
+19,82304 :###: Window nr 3 repaired
+19,82304 :: Customer nr 49 came to the window nr 3 actual size of queue :2
+20,05639 :###: Window nr 5 repaired
+20,05639 :: Customer nr 51 came to the window nr 5 actual size of queue :1
+20,12750 :: Customer nr 48 is leaving window nr 4
+20,12750 :: Customer nr 42 came to the window nr 4 actual size of queue :0
+20,24046 :: Customer nr 45 is leaving window nr 2
+20,32855 :: Customer nr 54 arrived with priority 3 - customer added to queue. Actual size of queue: 1
+20,32855 :: Customer nr 54 came to the window nr 2 actual size of queue :0
+20,51636 :: Customer nr 55 arrived with priority 1 - customer added to queue. Actual size of queue: 1
+20,52109 :: Customer nr 51 is leaving window nr 5
+20,52109 :: Customer nr 55 came to the window nr 5 actual size of queue :0
+20,60429 :###: Window nr 4 breakdown
+20,60429 :###: Customer nr 42 redirected to technical queue
+20,68475 :: Customer nr 46 is leaving window nr 1
+20,68475 :###: Technical Queue - Customer nr 42 came to the window nr 1 actual size of technical queue : 0
+20,78452 :: Customer nr 56 arrived with priority 1 - customer added to queue. Actual size of queue: 1
+20,97786 :: Customer nr 47 is leaving window nr 0
+20,97786 :: Customer nr 56 came to the window nr 0 actual size of queue :0
+20,98046 :$$$: Customer nr 42 got impatient during service in window nr 1, current impatient lost: 8
+21,01998 :$$$: Customer nr 55 got impatient during service in window nr 5, current impatient lost: 9
+21,32111 :: Customer nr 49 is leaving window nr 3
+21,67058 :: Customer nr 54 is leaving window nr 2
+21,68331 :: Customer nr 57 arrived with priority 2 - customer added to queue. Actual size of queue: 1
+21,68331 :: Customer nr 57 came to the window nr 1 actual size of queue :0
+21,88130 :: Customer nr 58 arrived with priority 3 - customer added to queue. Actual size of queue: 1
+21,88130 :: Customer nr 58 came to the window nr 2 actual size of queue :0
+22,07339 :: Customer nr 58 is leaving window nr 2
+22,14266 :: Customer nr 56 is leaving window nr 0
+22,63180 :###: Window nr 4 repaired
+23,51025 :###: Window nr 1 breakdown
+23,51025 :###: Customer nr 57 redirected to technical queue
+23,72729 :$$$: Customer nr 57 got impatient during waiting in queue, current impatient lost: 10
+24,17243 :###: Window nr 1 repaired
+24,17544 :: Customer nr 59 arrived with priority 3 - customer added to queue. Actual size of queue: 1
+24,17544 :###: Technical Queue - Customer nr 57 came to the window nr 0 actual size of technical queue : 0
+24,43344 :: Customer nr 57 is leaving window nr 0
+24,43344 :: Customer nr 59 came to the window nr 0 actual size of queue :0
+24,47419 :: Customer nr 60 arrived with priority 1 - customer added to queue. Actual size of queue: 1
+24,47419 :: Customer nr 60 came to the window nr 1 actual size of queue :0
+24,48306 :: Customer nr 61 arrived with priority 3 - customer added to queue. Actual size of queue: 1
+24,48306 :: Customer nr 61 came to the window nr 2 actual size of queue :0
+24,84905 :: Customer nr 59 is leaving window nr 0
+25,31161 :###: Window nr 1 breakdown
+25,31161 :###: Customer nr 60 redirected to technical queue
+25,74815 :###: Window nr 0 breakdown
+25,95881 :###: Window nr 0 repaired
+25,99057 :: Customer nr 62 arrived with priority 3 - customer added to queue. Actual size of queue: 1
+25,99057 :###: Technical Queue - Customer nr 60 came to the window nr 0 actual size of technical queue : 0
+26,52811 :: Customer nr 63 arrived with priority 1 - customer added to queue. Actual size of queue: 2
+26,78620 :###: Window nr 1 repaired
+26,78620 :: Customer nr 63 came to the window nr 1 actual size of queue :1
+27,01207 :###: Window nr 4 breakdown
+27,09424 :: Customer nr 60 is leaving window nr 0
+27,09424 :: Customer nr 62 came to the window nr 0 actual size of queue :0
+27,22110 :: Customer nr 61 is leaving window nr 2
+27,43245 :###: Window nr 4 repaired
+27,60540 :: Customer nr 62 is leaving window nr 0
+27,70117 :: Customer nr 64 arrived with priority 2 - customer added to queue. Actual size of queue: 1
+27,70117 :: Customer nr 64 came to the window nr 0 actual size of queue :0
+27,80293 :: Customer nr 63 is leaving window nr 1
+28,02052 :: Customer nr 65 arrived with priority 2 - customer added to queue. Actual size of queue: 1
+28,02052 :: Customer nr 65 came to the window nr 1 actual size of queue :0
+28,16481 :: Customer nr 65 is leaving window nr 1
+28,29601 :: Customer nr 66 arrived with priority 3 - customer added to queue. Actual size of queue: 1
+28,29601 :: Customer nr 66 came to the window nr 1 actual size of queue :0
+28,34652 :: Customer nr 66 is leaving window nr 1
+28,84698 :: Customer nr 64 is leaving window nr 0
+29,10907 :: Customer nr 67 arrived with priority 2 - customer added to queue. Actual size of queue: 1
+29,10907 :: Customer nr 67 came to the window nr 0 actual size of queue :0
+30,05757 :: Customer nr 68 arrived with priority 3 - customer added to queue. Actual size of queue: 1
+30,05757 :: Customer nr 68 came to the window nr 1 actual size of queue :0
+30,20802 :$$$: Customer nr 68 got impatient during service in window nr 1, current impatient lost: 11
+30,41441 :: Customer nr 67 is leaving window nr 0
+30,43359 :: Customer nr 69 arrived with priority 2 - customer added to queue. Actual size of queue: 1
+30,43359 :: Customer nr 69 came to the window nr 0 actual size of queue :0
+30,45301 :: Customer nr 70 arrived with priority 2 - customer added to queue. Actual size of queue: 1
+30,45301 :: Customer nr 70 came to the window nr 1 actual size of queue :0
+30,87460 :###: Window nr 5 breakdown
+30,89139 :###: Window nr 5 repaired
+30,91882 :: Customer nr 71 arrived with priority 2 - customer added to queue. Actual size of queue: 1
+30,91882 :: Customer nr 71 came to the window nr 2 actual size of queue :0
+30,93650 :: Customer nr 72 arrived with priority 3 - customer added to queue. Actual size of queue: 1
+30,93650 :: Customer nr 72 came to the window nr 3 actual size of queue :0
+31,11331 :: Customer nr 73 arrived with priority 2 - customer added to queue. Actual size of queue: 1
+31,11331 :: Customer nr 73 came to the window nr 4 actual size of queue :0
+31,17640 :: Customer nr 69 is leaving window nr 0
+31,55970 :: Customer nr 70 is leaving window nr 1
+31,65588 :: Customer nr 74 arrived with priority 2 - customer added to queue. Actual size of queue: 1
+31,65588 :: Customer nr 74 came to the window nr 0 actual size of queue :0
+31,71932 :###: Window nr 0 breakdown
+31,71932 :###: Customer nr 74 redirected to technical queue
+31,76096 :###: Window nr 0 repaired
+32,11325 :: Customer nr 75 arrived with priority 3 - customer added to queue. Actual size of queue: 1
+32,11325 :###: Technical Queue - Customer nr 74 came to the window nr 0 actual size of technical queue : 0
+32,24003 :: Customer nr 71 is leaving window nr 2
+32,24003 :: Customer nr 75 came to the window nr 2 actual size of queue :0
+32,41778 :: Customer nr 74 is leaving window nr 0
+32,53776 :: Customer nr 73 is leaving window nr 4
+33,07438 :: Customer nr 76 arrived with priority 1 - customer added to queue. Actual size of queue: 1
+33,07438 :: Customer nr 76 came to the window nr 0 actual size of queue :0
+33,13796 :: Customer nr 72 is leaving window nr 3
+33,17309 :: Customer nr 75 is leaving window nr 2
+33,98473 :: Customer nr 76 is leaving window nr 0
+34,06854 :: Customer nr 77 arrived with priority 3 - customer added to queue. Actual size of queue: 1
+34,06854 :: Customer nr 77 came to the window nr 0 actual size of queue :0
+34,09799 :: Customer nr 78 arrived with priority 2 - customer added to queue. Actual size of queue: 1
+34,09799 :: Customer nr 78 came to the window nr 1 actual size of queue :0
+34,13433 :: Customer nr 79 arrived with priority 2 - customer added to queue. Actual size of queue: 1
+34,13433 :: Customer nr 79 came to the window nr 2 actual size of queue :0
+34,19152 :###: Window nr 1 breakdown
+34,19152 :###: Customer nr 78 redirected to technical queue
+34,20668 :: Customer nr 80 arrived with priority 1 - customer added to queue. Actual size of queue: 1
+34,20668 :###: Technical Queue - Customer nr 78 came to the window nr 3 actual size of technical queue : 0
+34,28073 :: Customer nr 79 is leaving window nr 2
+34,28073 :: Customer nr 80 came to the window nr 2 actual size of queue :0
+34,51602 :: Customer nr 81 arrived with priority 1 - customer added to queue. Actual size of queue: 1
+34,51602 :: Customer nr 81 came to the window nr 4 actual size of queue :0
+34,82895 :: Customer nr 81 is leaving window nr 4
+34,96974 :###: Window nr 1 repaired
+35,29484 :: Customer nr 82 arrived with priority 2 - customer added to queue. Actual size of queue: 1
+35,29484 :: Customer nr 82 came to the window nr 1 actual size of queue :0
+35,51353 :: Customer nr 83 arrived with priority 1 - customer added to queue. Actual size of queue: 1
+35,51353 :: Customer nr 83 came to the window nr 4 actual size of queue :0
+35,51516 :: Customer nr 84 arrived with priority 3 - customer added to queue. Actual size of queue: 1
+35,51516 :: Customer nr 84 came to the window nr 5 actual size of queue :0
+35,76676 :: Customer nr 85 arrived with priority 3 - customer added to queue. Actual size of queue: 1
+35,78299 :: Customer nr 83 is leaving window nr 4
+35,78299 :|||: Customer nr 83 returns to queue
+35,78299 :: Customer nr 83 arrived with priority 1 - customer added to queue. Actual size of queue: 2
+35,78299 :: Customer nr 83 came to the window nr 4 actual size of queue :1
+36,23535 :: Customer nr 78 is leaving window nr 3
+36,23535 :: Customer nr 85 came to the window nr 3 actual size of queue :0
+36,25356 :###: Window nr 5 breakdown
+36,25356 :###: Customer nr 84 redirected to technical queue
+36,33609 :###: Window nr 3 breakdown
+36,33609 :###: Customer nr 85 redirected to technical queue
+36,33948 :: Customer nr 86 arrived with priority 1 - customer added to queue. Actual size of queue: 1
+36,67351 :: Customer nr 80 is leaving window nr 2
+36,67351 :###: Technical Queue - Customer nr 84 came to the window nr 2 actual size of technical queue : 1
+36,75184 :###: Window nr 3 repaired
+36,75184 :###: Technical Queue - Customer nr 85 came to the window nr 3 actual size of technical queue : 0
+37,09059 :: Customer nr 87 arrived with priority 2 - customer added to queue. Actual size of queue: 2
+37,61704 :###: Window nr 3 breakdown
+37,61704 :###: Customer nr 85 redirected to technical queue
+37,87460 :: Customer nr 82 is leaving window nr 1
+37,87460 :###: Technical Queue - Customer nr 85 came to the window nr 1 actual size of technical queue : 0
+37,94513 :###: Window nr 5 repaired
+37,94513 :: Customer nr 86 came to the window nr 5 actual size of queue :1
+37,95053 :: Customer nr 88 arrived with priority 2 - customer added to queue. Actual size of queue: 2
+37,98592 :: Customer nr 86 is leaving window nr 5
+37,98592 :: Customer nr 87 came to the window nr 5 actual size of queue :1
+38,08508 :###: Window nr 5 breakdown
+38,08508 :###: Customer nr 87 redirected to technical queue
+38,77436 :###: Window nr 5 repaired
+38,77436 :###: Technical Queue - Customer nr 87 came to the window nr 5 actual size of technical queue : 0
+38,91738 :###: Window nr 3 repaired
+38,91738 :: Customer nr 88 came to the window nr 3 actual size of queue :0
+39,08586 :: Customer nr 85 is leaving window nr 1
+39,13881 :$$$: Customer nr 87 got impatient during service in window nr 5, current impatient lost: 12
+39,53579 :: Customer nr 77 is leaving window nr 0
+40,41420 :: Customer nr 84 is leaving window nr 2
+40,51936 :: Customer nr 88 is leaving window nr 3
+40,59644 :###: Window nr 0 breakdown
+40,72169 :: Customer nr 83 is leaving window nr 4
+40,72169 :|||: Customer nr 83 returns to queue
+40,72169 :: Customer nr 83 arrived with priority 1 - customer added to queue. Actual size of queue: 1
+40,72169 :: Customer nr 83 came to the window nr 1 actual size of queue :0
+42,30318 :###: Window nr 0 repaired
+43,12474 :: Customer nr 83 is leaving window nr 1
+43,12474 :|||: Customer nr 83 returns to queue
+43,12474 :: Customer nr 83 arrived with priority 1 - customer added to queue. Actual size of queue: 1
+43,12474 :: Customer nr 83 came to the window nr 0 actual size of queue :0
+44,58098 :$$$: Customer nr 83 got impatient during service in window nr 0, current impatient lost: 13
+48,04229 :###: Window nr 1 breakdown
+48,64454 :###: Window nr 2 breakdown
+49,33043 :###: Window nr 2 repaired
+50,31629 :###: Window nr 1 repaired
+62,55228 :###: Window nr 4 breakdown
+63,26959 :###: Window nr 4 repaired
 
 
 		 ---SUMMARY---
@@ -404,21 +398,21 @@ Loss of customers due to queue overflow
 1
 
 Loss of customers due to impatience
-11
+13
 
 Expected limit number of customers in the branch
-4.841025641025641
+5.642487046632124
 
 Expected limit number of customers in the queue
-0.7101449275362319
+1.2621359223300972
 
 Expected limit time of queuing customer waiting to start service
-0.07383603445531314
+0.3631392588806531
 
 Expected customer service time limit
-1.2967711495918317
+1.4151049085724257
 
 Limit probability of resigning from customer service
-0.11
+0.13
 
 		 ---END OF LOG---

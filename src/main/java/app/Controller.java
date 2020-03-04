@@ -40,13 +40,10 @@ public class Controller {
     TextField numberOfWindowsValue;
     @FXML
     ChoiceBox<String> prioritiesValue;
-    @FXML
-    TextField serviceLengthValue;
 
 
     private Simulation simulation;
     static boolean isSimulationActive = false;
-    private Drawer drawer;
     private double service;
     private double customerArrival;
     private double breakdown;
@@ -67,7 +64,7 @@ public class Controller {
                     (int) maxLimitOfClients, (int) numberOfWindows, (int) numberOfPriorities, (int) serviceLength, controlArrayList);
             simulation.setDaemon(true);
 
-            drawer = new Drawer(visualizationPane, simulation.getBank(), sliderSpeed);
+            Drawer drawer = new Drawer(visualizationPane, simulation.getBank(), sliderSpeed);
             drawer.setDaemon(true);
 
             drawer.setDraw();
@@ -102,9 +99,7 @@ public class Controller {
         numberOfWindowsValue.setDisable(true);
         numberOfPriorities = Double.parseDouble(prioritiesValue.getValue());
         prioritiesValue.setDisable(true);
-        serviceLength = (getValueFromTextField(serviceLengthValue) == -9.999 ? 2 : getValueFromTextField(serviceLengthValue));
-        serviceLengthValue.setDisable(true);
-        controlArrayList.add(serviceLengthValue);
+        serviceLength = (getValueFromTextField(serviceValue) == -9.999 ? 2 : getValueFromTextField(serviceValue));
         controlArrayList.add(serviceValue);
         controlArrayList.add(customerArrivalValue);
         controlArrayList.add(breakdownValue);
@@ -114,7 +109,6 @@ public class Controller {
         controlArrayList.add(clientLimitValue);
         controlArrayList.add(numberOfWindowsValue);
         controlArrayList.add(prioritiesValue);
-        controlArrayList.add(serviceLengthValue);
         controlArrayList.add(sliderSpeed);
         controlArrayList.add(sliderLength);
         controlArrayList.add(startButton);
